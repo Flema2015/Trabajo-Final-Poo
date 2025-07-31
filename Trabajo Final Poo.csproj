@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24484735-6E81-4230-AB68-DEB2156F787E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Trabajo_Final_Poo</RootNamespace>
+    <AssemblyName>Trabajo Final Poo</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gestion de Productos\Clases\Gestion_producto.cs" />
+    <Compile Include="Gestion de Productos\Clases\Producto.cs" />
+    <Compile Include="Gestion de Productos\Formulario_alta_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion de Productos\Formulario_alta_producto.Designer.cs">
+      <DependentUpon>Formulario_alta_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion de Productos\Formulario_baja_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion de Productos\Formulario_baja_producto.Designer.cs">
+      <DependentUpon>Formulario_baja_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion de Productos\Formulario_modificar_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion de Productos\Formulario_modificar_producto.Designer.cs">
+      <DependentUpon>Formulario_modificar_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion de Productos\Formulario_todos_los_productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion de Productos\Formulario_todos_los_productos.Designer.cs">
+      <DependentUpon>Formulario_todos_los_productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de movimientos\Formulario_consulta_movimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de movimientos\Formulario_consulta_movimientos.Designer.cs">
+      <DependentUpon>Formulario_consulta_movimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de movimientos\Formulario_egreso_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de movimientos\Formulario_egreso_stock.Designer.cs">
+      <DependentUpon>Formulario_egreso_stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de movimientos\Formulario_ingreso_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de movimientos\Formulario_ingreso_stock.Designer.cs">
+      <DependentUpon>Formulario_ingreso_stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de movimientos\Formulario_todos_los_movimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de movimientos\Formulario_todos_los_movimientos.Designer.cs">
+      <DependentUpon>Formulario_todos_los_movimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de Proveedores\Formulario_alta_proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de Proveedores\Formulario_alta_proveedor.Designer.cs">
+      <DependentUpon>Formulario_alta_proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de Proveedores\Formulario_baja_proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de Proveedores\Formulario_baja_proveedor.Designer.cs">
+      <DependentUpon>Formulario_baja_proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de Proveedores\Formulario_modificar_proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de Proveedores\Formulario_modificar_proveedor.Designer.cs">
+      <DependentUpon>Formulario_modificar_proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de Proveedores\Formulario_todos_los_proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de Proveedores\Formulario_todos_los_proveedores.Designer.cs">
+      <DependentUpon>Formulario_todos_los_proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de Rubros\Clases\Gestion_rubro.cs" />
+    <Compile Include="Gestión de Rubros\Clases\Rubro.cs" />
+    <Compile Include="Gestión de Rubros\Formulario_alta_rubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de Rubros\Formulario_alta_rubro.Designer.cs">
+      <DependentUpon>Formulario_alta_rubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de Rubros\Formulario_baja_rubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de Rubros\Formulario_baja_rubro.Designer.cs">
+      <DependentUpon>Formulario_baja_rubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de Rubros\Formulario_modificar_rubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de Rubros\Formulario_modificar_rubro.Designer.cs">
+      <DependentUpon>Formulario_modificar_rubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión de Rubros\Formulario_todos_los_rubros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestión de Rubros\Formulario_todos_los_rubros.Designer.cs">
+      <DependentUpon>Formulario_todos_los_rubros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Integrantes\Formulario_Emanuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integrantes\Formulario_Emanuel.Designer.cs">
+      <DependentUpon>Formulario_Emanuel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Integrantes\Formulario_Lucas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integrantes\Formulario_Lucas.Designer.cs">
+      <DependentUpon>Formulario_Lucas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\Formulario_historial_movimientos_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formulario_historial_movimientos_producto.Designer.cs">
+      <DependentUpon>Formulario_historial_movimientos_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Formulario_movimientos_por_proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formulario_movimientos_por_proveedor.Designer.cs">
+      <DependentUpon>Formulario_movimientos_por_proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Formulario_producto_bajo_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formulario_producto_bajo_stock.Designer.cs">
+      <DependentUpon>Formulario_producto_bajo_stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Formulario_stock_por_rubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formulario_stock_por_rubro.Designer.cs">
+      <DependentUpon>Formulario_stock_por_rubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Formulario_stock_por_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Formulario_stock_por_producto.Designer.cs">
+      <DependentUpon>Formulario_stock_por_producto.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Gestion de Productos\Formulario_alta_producto.resx">
+      <DependentUpon>Formulario_alta_producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gestión de movimientos\Clases\" />
+    <Folder Include="Gestión de Proveedores\Clases\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

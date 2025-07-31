@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Trabajo_Final_Poo.Reportes
+{
+    public partial class Formulario_stock_por_rubro : Form
+    {
+        public Formulario_stock_por_rubro()
+        {
+            InitializeComponent();
+        }
+    }
+}
