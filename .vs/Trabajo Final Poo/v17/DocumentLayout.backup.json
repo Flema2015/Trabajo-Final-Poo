@@ -3,15 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|c:\\users\\emanuel\\source\\repos\\trabajo final poo\\gesti\u00F3n de rubros\\clases\\rubro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:gesti\u00F3n de rubros\\clases\\rubro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|c:\\users\\emanuel\\source\\repos\\trabajo final poo\\gesti\u00F3n de movimientos\\clases\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:gesti\u00F3n de movimientos\\clases\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\gesti\u00F3n de rubros\\clases\\gestion_rubro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|c:\\users\\emanuel\\source\\repos\\trabajo final poo\\gesti\u00F3n de movimientos\\clases\\gestion_movimientos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:gesti\u00F3n de movimientos\\clases\\gestion_movimientos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|c:\\users\\emanuel\\source\\repos\\trabajo final poo\\gesti\u00F3n de proveedores\\clases\\proveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:gesti\u00F3n de proveedores\\clases\\proveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|c:\\users\\emanuel\\source\\repos\\trabajo final poo\\gesti\u00F3n de rubros\\clases\\gestion_rubro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:gesti\u00F3n de rubros\\clases\\gestion_rubro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\gestion de productos\\clases\\gestion_producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|c:\\users\\emanuel\\source\\repos\\trabajo final poo\\gesti\u00F3n de proveedores\\clases\\gestion_proveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:gesti\u00F3n de proveedores\\clases\\gestion_proveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|c:\\users\\emanuel\\source\\repos\\trabajo final poo\\gestion de productos\\clases\\gestion_producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:gestion de productos\\clases\\gestion_producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -21,18 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24484735-6E81-4230-AB68-DEB2156F787E}|Trabajo Final Poo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +46,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Menu.cs",
               "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Menu.cs",
               "RelativeDocumentMoniker": "Menu.cs",
@@ -60,88 +60,97 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Gestion_rubro.cs",
-              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de Rubros\\Clases\\Gestion_rubro.cs",
-              "RelativeDocumentMoniker": "Gesti\u00F3n de Rubros\\Clases\\Gestion_rubro.cs",
-              "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de Rubros\\Clases\\Gestion_rubro.cs",
-              "RelativeToolTip": "Gesti\u00F3n de Rubros\\Clases\\Gestion_rubro.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCoAAAAAAAAAAAAAAA==",
+              "Title": "Gestion_movimientos.cs",
+              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de movimientos\\Clases\\Gestion_movimientos.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n de movimientos\\Clases\\Gestion_movimientos.cs",
+              "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de movimientos\\Clases\\Gestion_movimientos.cs",
+              "RelativeToolTip": "Gesti\u00F3n de movimientos\\Clases\\Gestion_movimientos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T21:24:27.829Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Rubro.cs",
-              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de Rubros\\Clases\\Rubro.cs",
-              "RelativeDocumentMoniker": "Gesti\u00F3n de Rubros\\Clases\\Rubro.cs",
-              "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de Rubros\\Clases\\Rubro.cs",
-              "RelativeToolTip": "Gesti\u00F3n de Rubros\\Clases\\Rubro.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "OverriddenGroupName": "Gesti\u00F3n de Rubros\\Clases",
-              "WhenOpened": "2025-07-30T21:24:39.894Z",
+              "WhenOpened": "2025-08-01T19:42:18.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Movimiento.cs",
+              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de movimientos\\Clases\\Movimiento.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n de movimientos\\Clases\\Movimiento.cs",
+              "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de movimientos\\Clases\\Movimiento.cs",
+              "RelativeToolTip": "Gesti\u00F3n de movimientos\\Clases\\Movimiento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T19:28:14.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Gestion_proveedores.cs",
+              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de Proveedores\\Clases\\Gestion_proveedores.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n de Proveedores\\Clases\\Gestion_proveedores.cs",
+              "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de Proveedores\\Clases\\Gestion_proveedores.cs",
+              "RelativeToolTip": "Gesti\u00F3n de Proveedores\\Clases\\Gestion_proveedores.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowDkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenGroupName": "Gesti\u00F3n de Proveedores\\Clases",
+              "WhenOpened": "2025-08-01T19:07:45.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Gestion_producto.cs",
               "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gestion de Productos\\Clases\\Gestion_producto.cs",
               "RelativeDocumentMoniker": "Gestion de Productos\\Clases\\Gestion_producto.cs",
               "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gestion de Productos\\Clases\\Gestion_producto.cs",
               "RelativeToolTip": "Gestion de Productos\\Clases\\Gestion_producto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwFkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T21:22:25.053Z"
+              "WhenOpened": "2025-08-01T19:06:12.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Proveedores.cs",
+              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de Proveedores\\Clases\\Proveedores.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n de Proveedores\\Clases\\Proveedores.cs",
+              "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de Proveedores\\Clases\\Proveedores.cs",
+              "RelativeToolTip": "Gesti\u00F3n de Proveedores\\Clases\\Proveedores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenGroupName": "Gesti\u00F3n de Proveedores\\Clases",
+              "WhenOpened": "2025-08-01T19:04:21.647Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Gestion_rubro.cs",
+              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gesti\u00F3n de Rubros\\Clases\\Gestion_rubro.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n de Rubros\\Clases\\Gestion_rubro.cs",
+              "ToolTip": "Gesti\u00F3n de Rubros/Clases/Gestion_rubro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenGroupName": "Gesti\u00F3n de Rubros\\Clases",
+              "OverriddenToolTip": "Gesti\u00F3n de Rubros/Clases/Gestion_rubro.cs",
+              "WhenOpened": "2025-07-30T21:24:27.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Producto.cs",
               "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gestion de Productos\\Clases\\Producto.cs",
               "RelativeDocumentMoniker": "Gestion de Productos\\Clases\\Producto.cs",
               "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Gestion de Productos\\Clases\\Producto.cs",
               "RelativeToolTip": "Gestion de Productos\\Clases\\Producto.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAuwC8AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA7wBkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T21:16:41.831Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Menu.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Menu.cs",
-              "RelativeDocumentMoniker": "Menu.cs",
-              "ToolTip": "Menu.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "OverriddenGroupName": "",
-              "OverriddenToolTip": "Menu.cs",
-              "WhenOpened": "2025-07-30T17:40:01.052Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Menu.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Menu.Designer.cs",
-              "RelativeDocumentMoniker": "Menu.Designer.cs",
-              "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Menu.Designer.cs",
-              "RelativeToolTip": "Menu.Designer.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAowHEAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T16:22:37.045Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Emanuel\\source\\repos\\Trabajo Final Poo\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T16:22:05.404Z"
+              "OverriddenGroupName": "Gestion de Productos\\Clases",
+              "WhenOpened": "2025-07-30T21:16:41.831Z",
+              "EditorCaption": ""
             }
           ]
         }
