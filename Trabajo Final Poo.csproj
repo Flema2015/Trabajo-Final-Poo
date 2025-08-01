@@ -121,7 +121,6 @@
       <DependentUpon>Formulario_todos_los_proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestión de Rubros\Clases\Gestion_rubro.cs" />
-    <Compile Include="Gestión de Rubros\Clases\Rubro.cs" />
     <Compile Include="Gestión de Rubros\Formulario_alta_rubro.cs">
       <SubType>Form</SubType>
     </Compile>

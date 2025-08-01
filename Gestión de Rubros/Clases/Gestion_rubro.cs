@@ -5,102 +5,99 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Trabajo_Final_Poo.Gestión_de_Rubros.Clases
+namespace Trabajo_Final_Poo
 {
     public class Gestion_rubro
     {
-        private static string archivo = "rubros.txt";
-
-        public static List<Rubro> Obtener_rubros()
+        public string ruta_archivo = "Rubros.txt";
+        private readonly List<string> rubros_por_defecto = new List<string>()
         {
-            List<Rubro> rubros = new List<Rubro>();
-
-            if (!File.Exists(archivo)) return rubros;
-
-            using (StreamReader sr = new StreamReader(archivo))
+            "Electrónica",
+            "Alimentos",
+            "Indumentaria",
+            
+        };
+        public List<string> cargar_rubros()
+        {
+            if (!File.Exists(ruta_archivo))
             {
-                string linea;
-                while ((linea = sr.ReadLine()) != null)
-                {
-                    if (!string.IsNullOrWhiteSpace(linea))
-                    {
-                        rubros.Add(new Rubro(linea.Trim()));
-                    }
-                }
+                File.WriteAllLines(ruta_archivo, rubros_por_defecto);
+                return new List<string>();
             }
+            
 
-            return rubros;
+            return File.ReadAllLines(ruta_archivo)
+                       .Select(r => r.Trim())
+                       .Where(r => !string.IsNullOrWhiteSpace(r))
+                       .Distinct(StringComparer.OrdinalIgnoreCase)//elimina duplicados ignorando mayúsculas y minúsculas
+                       .ToList();
         }
 
-
-        public static void Guardar_rubro(Rubro rubro)
+        public void agregar_rubro(string nuevo_rubro, string ruta_archivo, List<string> lista_rubros)
         {
-            using (StreamWriter sw = new StreamWriter(archivo, append: true))
+            nuevo_rubro = nuevo_rubro.Trim();
+
+            if (string.IsNullOrWhiteSpace(nuevo_rubro))
             {
-                sw.WriteLine(rubro.ToString());
-            }
-        }
-
-        public static void Alta_rubro()
-        {
-            Console.Write("Ingrese nombre del nuevo rubro: ");
-            string nombre = Console.ReadLine();
-
-            Rubro rubro = new Rubro(nombre);
-            Guardar_rubro(rubro);
-
-            Console.WriteLine("Rubro agregado.");
-        }
-
-        public static void Modificar_rubro()
-        {
-            var rubros = Obtener_rubros();
-            Mostrar_rubros(rubros);
-
-            Console.Write("Ingrese el nombre del rubro a modificar: ");
-            string nombre = Console.ReadLine();
-
-            var rubro = rubros.FirstOrDefault(r => r.Nombre == nombre);
-            if (rubro == null)
-            {
-                Console.WriteLine("Rubro no encontrado.");
+                Console.WriteLine("No se puede agregar un rubro vacío.");
                 return;
             }
 
-            Console.Write("Nuevo nombre: ");
-            rubro.Nombre = Console.ReadLine();
-            Guardar_rubro(rubro);
-
-            Console.WriteLine("Rubro modificado.");
-        }
-
-        public static void Baja_rubro(List<Producto> productos)
-        {
-            var rubros = Obtener_rubros();
-            Mostrar_rubros(rubros);
-
-            Console.WriteLine("Ingrese Nombre del rubro a eliminar: ");
-            string nombre = Console.ReadLine();
-
-            if (productos.Any(p => p == nombre))
+            if (lista_rubros.Contains(nuevo_rubro, StringComparer.OrdinalIgnoreCase))
             {
-                Console.WriteLine("No se puede eliminar un rubro con productos asociados.");
+                Console.WriteLine("Ese rubro ya existe.");
                 return;
             }
 
-            rubros = rubros.Where(r => r.Nombre != nombre).ToList();
-            Guardar_rubro(rubros);
-            Console.WriteLine("✅ Rubro eliminado.");
-        }
+            File.AppendAllText(ruta_archivo, nuevo_rubro + Environment.NewLine);
+            lista_rubros.Add(nuevo_rubro);
 
-        public static void Mostrar_rubros(List<Rubro> rubros = null)
+            Console.WriteLine($"Rubro '{nuevo_rubro}' agregado correctamente.");
+        }
+        public void eliminar_rubro(string nombre_rubro, string ruta_archivo, List<string> lista_rubros)
         {
-            rubros ??= Obtener_rubros();
+            if (string.IsNullOrWhiteSpace(nombre_rubro))
+            {
+                Console.WriteLine("El nombre del rubro no puede estar vacío.");
+                return;
+            }
+
+            if (!lista_rubros.Contains(nombre_rubro, StringComparer.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("El rubro no existe.");
+                return;
+            }
+
+            lista_rubros.Remove(nombre_rubro);
+            File.WriteAllLines(ruta_archivo, lista_rubros);
+
+            Console.WriteLine($"Rubro '{nombre_rubro}' eliminado correctamente.");
+        }
+        public void mostrar_rubros(List<string> lista_rubros)
+        {
+            if (lista_rubros.Count == 0)
+            {
+                Console.WriteLine("No hay rubros disponibles.");
+                return;
+            }
+
             Console.WriteLine("Rubros disponibles:");
-            foreach (var r in rubros)
+            foreach (var rubro in lista_rubros)
             {
-                Console.WriteLine($"{r.Id}. {r.Nombre}");
+                Console.WriteLine($"- {rubro}");
             }
+        }
+
+        public void modificar_rubro(string rubro_viejo, string rubro_nuevo)
+        {
+            var rubros = cargar_rubros();
+
+            int index = rubros.FindIndex(r => r.Equals(rubro_viejo, StringComparison.OrdinalIgnoreCase));
+            if (index == -1)
+                throw new InvalidOperationException("El rubro original no fue encontrado");
+            rubros[index] = rubro_nuevo.Trim();
+            File.WriteAllLines(ruta_archivo, rubros);
+            Console.WriteLine($"Rubro '{rubro_viejo}' modificado correctamente a '{rubro_nuevo}'");
         }
     }
 }

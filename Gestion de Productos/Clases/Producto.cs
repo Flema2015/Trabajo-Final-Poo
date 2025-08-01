@@ -3,51 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Trabajo_Final_Poo.Gestión_de_Rubros.Clases;
+
 
 namespace Trabajo_Final_Poo
 {
-    internal class Producto
+    public class Producto
     {
-        private string Nombre {  get; set; }
-        private string Descripcion { get; set; }
-        private decimal Precio { get; set; }
-        private int Stock { get; set; }
-        private Rubro Rubro { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public decimal PrecioCompra { get; set; }
+        public decimal PrecioVenta => PrecioCompra * 1.5m; // Lógica de negocio
+        public int Stock { get; set; }
+        public string Rubro { get; set; }
+        public DateTime FechaVencimiento { get; set; }
 
-        public Producto(string nombre, string descripcion, decimal precio, int stock, Rubro rubro)
-        { 
+        public Producto(string nombre, string descripcion, decimal precioCompra, int stock, string rubro, DateTime vencimiento)
+        {
             Nombre = nombre;
             Descripcion = descripcion;
-            Precio = precio;
+            PrecioCompra = precioCompra;
             Stock = stock;
-            Rubro = rubro; 
+            Rubro = rubro;
+            FechaVencimiento = vencimiento;
         }
 
         public override string ToString()
         {
-            return $"{Nombre}|{Descripcion}|{Precio}|{Stock}|{Rubro.Nombre}";
+            return $"{Nombre} | {Rubro} | ${PrecioVenta}";
         }
-        public Rubro Obtener_rubro()
-        {
-            return Rubro;
-        }
-        public static Producto Desde_Linea(string linea, List<Rubro> rubros)
-        {
-            var partes = linea.Split('|');
-            string rubro_nombre = partes[4].Trim();
-
-            Rubro rubro = rubros.FirstOrDefault(r => r.Nombre.Equals(rubro_nombre, StringComparison.OrdinalIgnoreCase));
-            if (rubro == null) rubro = new Rubro(rubro_nombre); // fallback si no se encuentra
-
-            return new Producto(
-                partes[0],
-                partes[1],
-                decimal.Parse(partes[2]),
-                int.Parse(partes[3]),
-                rubro
-            );
-        }
-
     }
+
 }
