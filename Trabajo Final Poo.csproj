@@ -206,6 +206,12 @@
     <EmbeddedResource Include="Gestion de Productos\Formulario_modificar_producto.resx">
       <DependentUpon>Formulario_modificar_producto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gestión de Proveedores\Formulario_alta_proveedor.resx">
+      <DependentUpon>Formulario_alta_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestión de Proveedores\Formulario_modificar_proveedor.resx">
+      <DependentUpon>Formulario_modificar_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Trabajo_Final_Poo
 {
@@ -42,20 +43,21 @@ namespace Trabajo_Final_Poo
             Guardar_proveedores(proveedores);
         }
 
-        public void Modificar_producto(string nombre_viejo, Proveedor proveedor_modificado)
+        public void Modificar_proveedor(string nombre_viejo, Proveedor proveedor_modificado)
         {
             var proveedores = Obtener_proveedores();
             var index = proveedores.FindIndex(p => p.nombre.Equals(nombre_viejo, StringComparison.OrdinalIgnoreCase));
             if (index == -1)
                 throw new InvalidOperationException("El Proveedor no fue encontrado.");
 
-            proveedores[index] = proveedor_modificado;
-            Guardar_proveedores(proveedores);
+            Proveedor proveedor = proveedor_modificado;
+            Guardar_proveedor(proveedor);
+            Eliminar_proveedor(nombre_viejo);
         }
-        public void Eliminar_proveedores(string nombre_proveedores)
+        public void Eliminar_proveedor(string nombre_proveedor)
         {
             var proveedores = Obtener_proveedores();
-            var index = proveedores.FindIndex(p => p.nombre.Equals(nombre_proveedores, StringComparison.OrdinalIgnoreCase));
+            var index = proveedores.FindIndex(p => p.nombre.Equals(nombre_proveedor, StringComparison.OrdinalIgnoreCase));
             if (index == -1)
                 throw new InvalidOperationException("El Proveedor no fue encontrado.");
 
@@ -75,5 +77,29 @@ namespace Trabajo_Final_Poo
             .FirstOrDefault(p =>
                 p.nombre.Equals(nombre,
                 StringComparison.OrdinalIgnoreCase));
+
+        public void GestorArchivos(string nombreArchivo = "proveedores.txt")
+        {
+            string carpeta = Path.Combine(Application.StartupPath, "Datos");
+            Directory.CreateDirectory(carpeta);
+            ruta_archivo = Path.Combine(carpeta, nombreArchivo);
+        }
+
+        public void Guardar_proveedor(Proveedor proveedor)
+        {
+            using (StreamWriter sw = new StreamWriter(ruta_archivo, append: true))
+            {
+                sw.WriteLine(proveedor.ToString());
+            }
+        }
+
+        public List<string> LeerLineas()
+        {
+            if (!File.Exists(ruta_archivo))
+                return new List<string>();
+
+            // File.ReadAllLines devuelve string[], lo convertimos a List<string>
+            return File.ReadAllLines(ruta_archivo, Encoding.UTF8).ToList();
+        }
     }
 }

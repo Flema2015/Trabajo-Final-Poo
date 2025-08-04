@@ -64,13 +64,13 @@ namespace Trabajo_Final_Poo
                 var rubros_validos = gestion_rubro.CargarRubros();
                 gestion_Producto.Guardar_producto(nuevo_producto);
 
-                MessageBox.Show("Producto agregado exitosamente.");
+                MessageBox.Show("Producto agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al agregar el producto: {ex.Message}");
             }
-            MessageBox.Show("Producto agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DialogResult resultado = MessageBox.Show("¿Desea ingresar otro producto antes de cerrar este formulario?", "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Trabajo_Final_Poo.Gestion_de_Productos;
+using Trabajo_Final_Poo.Gestión_de_Proveedores;
 
 namespace Trabajo_Final_Poo
 {
@@ -97,6 +98,28 @@ namespace Trabajo_Final_Poo
                 Formulario_baja_producto form_baja = new Formulario_baja_producto();
                 form_baja.MdiParent = this;
                 form_baja.Show();
+            }
+        }
+
+        private void altaProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_alta_proveedor"];
+            if (form_open == null)
+            {
+                Formulario_alta_proveedor form_alta_proveedor = new Formulario_alta_proveedor();
+                form_alta_proveedor.MdiParent = this;
+                form_alta_proveedor.Show();
+            }
+        }
+
+        private void modificarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_modificar_proveedor"];
+            if (form_open == null)
+            {
+                Formulario_modificar_proveedor form_modificar_proveedor = new Formulario_modificar_proveedor();
+                form_modificar_proveedor.MdiParent = this;
+                form_modificar_proveedor.Show();
             }
         }
     }
