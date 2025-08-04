@@ -62,6 +62,7 @@ namespace Trabajo_Final_Poo
                 Formulario_modificar_producto form_modificar = new Formulario_modificar_producto();
                 form_modificar.MdiParent = this;
                 form_modificar.Show();
+               
             }
         }
 
@@ -77,7 +78,18 @@ namespace Trabajo_Final_Poo
             }
         }
 
-        private void modificarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        //private void modificarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    Form form_open = Application.OpenForms["Formulario_modificar_producto"];
+        //    if (form_open == null)
+        //    {
+        //        Formulario_modificar_producto form_modificar = new Formulario_modificar_producto();
+        //        form_modificar.MdiParent = this;
+        //        form_modificar.Show();
+        //    }
+        //}
+
+        private void bajaProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form form_open = Application.OpenForms["Formulario_baja_producto"];
             if (form_open == null)

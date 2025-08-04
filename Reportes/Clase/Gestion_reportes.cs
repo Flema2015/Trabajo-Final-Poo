@@ -71,7 +71,7 @@ namespace Trabajo_Final_Poo
             return resultado;
         }
 
-        public List<string> Listar_envios_por_proveedor(string nombre_proveedor)
+        public List<string> Listar_ingresos_por_proveedor(string nombre_proveedor)
         {
             // 1. Validar que exista el proveedor (opcional)
             // Requiere un método en gestion_proveedores que busque por nombre.
@@ -92,6 +92,51 @@ namespace Trabajo_Final_Poo
                 .ToList();
         }
 
+        public List<Stock_info> Producto_con_bajo_stock()
+        {
+            var productos = gestion_producto.Obtener_productos();
+            var resultado = new List<Stock_info>();
 
+            if (productos == null || productos.Count == 0)
+            {
+                Console.WriteLine("No hay productos registrados.");
+                return resultado;  // Devuelve lista vacía
+            }
+
+            foreach (var producto in productos)
+            {
+                if (producto.Stock <= 10)
+                {
+                    resultado.Add(new Stock_info
+                    {
+                        Nombre_producto = producto.Nombre,    // Asegurate de usar la propiedad correcta
+                        cantidad_stock = producto.Stock // O como se llame tu propiedad
+                    });
+                }
+            }
+
+            return resultado;
+        }
+        public List<string> Listar_ingresos_egresos_producto(string nombre_producto)
+        {
+            // 1. Validar que exista el producto 
+           
+            var producto = gestion_producto
+                .Obtener_producto_por_nombre(nombre_producto);
+            if (producto == null)
+                throw new ArgumentException(
+                    $"No se encontró un proveedor con nombre '{nombre_producto}'",
+                    nameof(nombre_producto));
+
+
+            //2 filtrar movimientos de tipo ingreso y egreso para ese producto
+            var movimientos = gestion_Movimientos.Buscar(producto_nombre: nombre_producto);
+
+            // 3. Devolver una lista con el nombre del producto por cada ingreso y egreso
+
+            return movimientos
+                .Select(m => m.nombre_producto)
+                .ToList();
+        }
     }
 }

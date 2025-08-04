@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Trabajo_Final_Poo.Gestión_de_Rubros;
+using System.Windows.Forms;
 
 namespace Trabajo_Final_Poo
 {
@@ -24,10 +25,15 @@ namespace Trabajo_Final_Poo
                 {
                     string nombre = partes[0].Trim();
                     string descripcion = partes[1].Trim();
-                    decimal precio_compra = decimal.Parse(partes[2].Trim());
-                    int stock = int.Parse(partes[3].Trim());
+                    if (!decimal.TryParse(partes[2].Trim(), out decimal precio_compra))
+                        continue;
+                    if (!int.TryParse(partes[3].Trim(), out int stock))
+                        continue; 
                     string rubro = partes[4].Trim();
-                    DateTime vencimiento = DateTime.Parse(partes[5].Trim());
+                    if (!DateTime.TryParse(partes[5].Trim(), out DateTime vencimiento))
+                        continue;
+
+
 
                     productos.Add(new Producto(nombre, descripcion, precio_compra, stock, rubro, vencimiento));
                 }
@@ -35,7 +41,11 @@ namespace Trabajo_Final_Poo
 
             return productos;
         }
-
+        public Producto Obtener_producto_por_nombre(string nombre) =>
+           Obtener_productos()
+           .FirstOrDefault(p =>
+               p.Nombre.Equals(nombre,
+               StringComparison.OrdinalIgnoreCase));
         public void Alta_producto(Producto nuevo_producto, List<string> rubros_validos)
         {
             if (!rubros_validos.Contains(nuevo_producto.Rubro, StringComparer.OrdinalIgnoreCase))
@@ -66,6 +76,7 @@ namespace Trabajo_Final_Poo
             productos.RemoveAt(index);
             Guardar_productos(productos);
         }
+
         public void Guardar_productos(List<Producto> productos)
         {
             var lineas = productos.Select(p =>
@@ -73,19 +84,20 @@ namespace Trabajo_Final_Poo
             );
             File.WriteAllLines(ruta_archivo, lineas);
         }
-        //public void mostrar_productos(List<Producto> productos)
-        //{
-        //    if (productos.Count == 0)
-        //    {
-        //        Console.WriteLine("No hay productos disponibles.");
-        //        return;
-        //    }
 
-        //    Console.WriteLine("Productos disponibles:");
-        //    foreach (var producto in productos)
-        //    {
-        //        Console.WriteLine($"- {producto.Nombre} | {producto.Descripcion} | Precio: {producto.PrecioCompra:C} | Stock: {producto.Stock} | Rubro: {producto.Rubro} | Vencimiento: {producto.FechaVencimiento.ToShortDateString()}");
-        //    }
-        //}
+        public void GestorArchivos(string nombreArchivo = "productos.txt")
+        {
+            string carpeta = Path.Combine(Application.StartupPath, "Datos");
+            Directory.CreateDirectory(carpeta);
+            ruta_archivo = Path.Combine(carpeta, nombreArchivo);
+        }
+
+        public void Guardar_producto(Producto producto)
+        {
+            using (StreamWriter sw = new StreamWriter(ruta_archivo, append: true))
+            {
+                sw.WriteLine(producto.ToString());
+            }
+        }
     }
 }

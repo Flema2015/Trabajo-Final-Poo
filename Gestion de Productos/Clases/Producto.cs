@@ -17,6 +17,8 @@ namespace Trabajo_Final_Poo
         public string Rubro { get; set; }
         public DateTime FechaVencimiento { get; set; }
 
+        public Producto(){ }
+
         public Producto(string nombre, string descripcion, decimal precioCompra, int stock, string rubro, DateTime vencimiento)
         {
             Nombre = nombre;
@@ -29,7 +31,7 @@ namespace Trabajo_Final_Poo
 
         public override string ToString()
         {
-            return $"{Nombre} | {Rubro} | ${PrecioVenta}";
+            return $"{Nombre} | {Descripcion} |  {PrecioCompra} | {Stock} | {Rubro} | {FechaVencimiento} | ${PrecioVenta}";
         }
     }
 
