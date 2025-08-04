@@ -39,43 +39,17 @@ namespace Trabajo_Final_Poo.Gestion_de_Productos
             
             try
             {
-                //string nombre = txtNombre.Text.Trim();
-                //string descripcion = txtdescripcion.Text.Trim();
-                //decimal precio_compra = decimal.Parse(txtPrecio.Text.Trim());
-                //int stock = int.Parse(txtStock.Text.Trim());
-                //string rubro = cmbRubro.SelectedItem?.ToString() ?? string.Empty;
-                //DateTime vencimiento = dtpVencimiento.Value.Date;
+                var gestor = new Gestion_producto();
 
-                //Producto nuevo_producto = new Producto(nombre, descripcion, precio_compra, stock, rubro, vencimiento);
-
-                // Validar si el rubro existe
-                var rubros_validos = gestion_rubro.CargarRubros();
-                
-                //List<Producto> lista_productos = gestion_Producto.Obtener_productos();
-
-                //lstProductos.DataSource = gestion_Producto.Obtener_productos();
-
-                foreach (var p in gestion_Producto.Obtener_productos())
-                {
-                    string productos = $"{p.Nombre} | {p.Descripcion} | {p.PrecioCompra} | {p.Stock} | {p.Rubro} | {p.FechaVencimiento.ToShortDateString()} | ${p.PrecioVenta}";
-                    lstProductos.Items.Add(productos);
-                }
-                //MessageBox.Show("Producto modificado exitosamente.");
+                List<string> productos = gestor.LeerLineas();
+                lstProductos.Items.Clear();
+                lstProductos.Items.AddRange(productos.ToArray());
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al buscar productos: {ex.Message}");
             }
             
-            //DialogResult resultado = MessageBox.Show("¿Desea ingresar otro producto antes de cerrar este formulario?", "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (resultado == DialogResult.Yes)
-            //{
-            //    LimpiarCampos();
-            //}
-            //else
-            //{
-            //    this.Close();
-            //}
         }
 
         private void lstProductos_SelectedIndexChanged(object sender, EventArgs e)

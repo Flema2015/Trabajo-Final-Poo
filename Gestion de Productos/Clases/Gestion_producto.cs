@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Trabajo_Final_Poo.Gestión_de_Rubros;
+using System.Text;
 using System.Windows.Forms;
+using Trabajo_Final_Poo.Gestión_de_Rubros;
 
 namespace Trabajo_Final_Poo
 {
@@ -99,5 +100,15 @@ namespace Trabajo_Final_Poo
                 sw.WriteLine(producto.ToString());
             }
         }
+
+        public List<string> LeerLineas()
+        {
+            if (!File.Exists(ruta_archivo))
+                return new List<string>();
+
+            // File.ReadAllLines devuelve string[], lo convertimos a List<string>
+            return File.ReadAllLines(ruta_archivo, Encoding.UTF8).ToList();
+        }
+
     }
 }
