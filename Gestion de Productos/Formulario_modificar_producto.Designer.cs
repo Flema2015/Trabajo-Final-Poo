@@ -51,10 +51,10 @@
             // 
             this.lstProductos.FormattingEnabled = true;
             this.lstProductos.ItemHeight = 16;
-            this.lstProductos.Location = new System.Drawing.Point(0, 81);
+            this.lstProductos.Location = new System.Drawing.Point(13, 13);
             this.lstProductos.Margin = new System.Windows.Forms.Padding(4);
             this.lstProductos.Name = "lstProductos";
-            this.lstProductos.Size = new System.Drawing.Size(647, 404);
+            this.lstProductos.Size = new System.Drawing.Size(759, 404);
             this.lstProductos.TabIndex = 0;
             this.lstProductos.SelectedIndexChanged += new System.EventHandler(this.lstProductos_SelectedIndexChanged);
             // 
@@ -62,7 +62,7 @@
             // 
             this.btnBuscar_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar_producto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBuscar_producto.Location = new System.Drawing.Point(121, 27);
+            this.btnBuscar_producto.Location = new System.Drawing.Point(778, 12);
             this.btnBuscar_producto.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar_producto.Name = "btnBuscar_producto";
             this.btnBuscar_producto.Size = new System.Drawing.Size(183, 47);
@@ -74,7 +74,7 @@
             // dtpVencimiento
             // 
             this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVencimiento.Location = new System.Drawing.Point(887, 294);
+            this.dtpVencimiento.Location = new System.Drawing.Point(612, 462);
             this.dtpVencimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dtpVencimiento.Name = "dtpVencimiento";
             this.dtpVencimiento.Size = new System.Drawing.Size(160, 22);
@@ -84,7 +84,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(667, 294);
+            this.label5.Location = new System.Drawing.Point(445, 465);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(159, 16);
@@ -93,7 +93,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(887, 57);
+            this.txtNombre.Location = new System.Drawing.Point(171, 425);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(160, 22);
@@ -101,7 +101,7 @@
             // 
             // txtdescripcion
             // 
-            this.txtdescripcion.Location = new System.Drawing.Point(887, 110);
+            this.txtdescripcion.Location = new System.Drawing.Point(171, 462);
             this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(160, 22);
@@ -109,7 +109,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(887, 175);
+            this.txtPrecio.Location = new System.Drawing.Point(171, 500);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(160, 22);
@@ -117,7 +117,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(887, 234);
+            this.txtStock.Location = new System.Drawing.Point(612, 428);
             this.txtStock.Margin = new System.Windows.Forms.Padding(4);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(160, 22);
@@ -126,7 +126,7 @@
             // cmbRubro
             // 
             this.cmbRubro.FormattingEnabled = true;
-            this.cmbRubro.Location = new System.Drawing.Point(887, 361);
+            this.cmbRubro.Location = new System.Drawing.Point(612, 495);
             this.cmbRubro.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRubro.Name = "cmbRubro";
             this.cmbRubro.Size = new System.Drawing.Size(160, 24);
@@ -136,7 +136,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(671, 361);
+            this.label4.Location = new System.Drawing.Point(445, 503);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 16);
@@ -147,7 +147,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(671, 234);
+            this.label3.Location = new System.Drawing.Point(445, 428);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 16);
@@ -158,7 +158,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(671, 175);
+            this.label2.Location = new System.Drawing.Point(56, 503);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 16);
@@ -169,7 +169,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(671, 110);
+            this.label1.Location = new System.Drawing.Point(56, 465);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 16);
@@ -180,7 +180,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(671, 58);
+            this.lblNombre.Location = new System.Drawing.Point(56, 428);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(62, 16);
@@ -190,7 +190,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(767, 420);
+            this.btnModificar.Location = new System.Drawing.Point(778, 67);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(183, 65);
@@ -202,12 +202,12 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(654, 493);
+            this.btnCancelar.Location = new System.Drawing.Point(780, 140);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(200, 65);
+            this.btnCancelar.Size = new System.Drawing.Size(181, 65);
             this.btnCancelar.TabIndex = 27;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Salir";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -215,7 +215,7 @@
             // 
             this.btnElimar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElimar.ForeColor = System.Drawing.Color.Red;
-            this.btnElimar.Location = new System.Drawing.Point(862, 493);
+            this.btnElimar.Location = new System.Drawing.Point(780, 213);
             this.btnElimar.Margin = new System.Windows.Forms.Padding(4);
             this.btnElimar.Name = "btnElimar";
             this.btnElimar.Size = new System.Drawing.Size(183, 65);
@@ -228,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(984, 531);
             this.Controls.Add(this.btnElimar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnModificar);
