@@ -6,43 +6,28 @@ using System.Threading.Tasks;
 
 namespace Trabajo_Final_Poo.Gestión_de_movimientos
 {
-    public enum TipoMovimiento
-    {
-        Ingreso,
-        Egreso
-    }
-
-    public enum MotivoEgreso
-    {
-        Venta,
-        Merma,
-        Transferencia,
-        Otro
-    }
-
     public class Movimiento
     {
-        public int Id { get; set; } // clave única
-
-        public string nombre_producto { get; set; } // opcional, para mostrar sin join
-        public TipoMovimiento Tipo { get; set; }
-        public int Cantidad { get; set; }
+        public int Id { get; set; }
         public DateTime Fecha { get; set; }
+        public string Proveedor { get; set; }
+        public int Stock { get; set; }
 
-        // Datos específicos
-        public string Proveedor { get; set; } // se usa solo en ingresos
-        public MotivoEgreso? Motivo_egreso { get; set; } // se usa solo en egresos
+        public Movimiento() { }
 
-
-        // Validación simple al crear
-        public void Validar()
+        public Movimiento(int id, DateTime fecha, string proveedor, int stock)
         {
-            if (Cantidad <= 0)
-                throw new ArgumentException("La cantidad debe ser mayor que cero.");
-            if (Tipo == TipoMovimiento.Ingreso && string.IsNullOrWhiteSpace(Proveedor))
-                throw new ArgumentException("El ingreso debe tener proveedor.");
-            if (Tipo == TipoMovimiento.Egreso && Motivo_egreso == null)
-                throw new ArgumentException("El egreso debe tener un motivo.");
+            Id = id;
+            Fecha = fecha;
+            Proveedor = proveedor;
+            Stock = stock;
         }
+
+        public override string ToString()
+        {
+            // Esto ayudará si luego usás un ListBox sin DisplayMember
+            return $"{Fecha:dd/MM/yyyy} | {Proveedor} | {Stock}";
+        }
+
     }
 }

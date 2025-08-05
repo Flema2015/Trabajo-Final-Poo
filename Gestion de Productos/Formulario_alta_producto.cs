@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using Trabajo_Final_Poo.Gestión_de_Rubros;
+using Trabajo_Final_Poo.Gestion_de_Productos;
 namespace Trabajo_Final_Poo
 {
     public partial class Formulario_alta_producto : Form
     {
-        const string CARPETA = "files";
-        string ruta_archivo_producto = Path.Combine(CARPETA, "productos.txt");
-        string ruta_archivo_rubros = Path.Combine(CARPETA, "rubros.txt");
-        //List<Gestion_rubro> rubros = new List<Gestion_rubro>();
+
+        string ruta_archivo_producto = Path.Combine(Application.StartupPath, "productos.txt");
+        string ruta_archivo_rubros = Path.Combine(Application.StartupPath, "rubros.txt");
         Gestion_rubro gestion_rubro = new Gestion_rubro();
 
         public Formulario_alta_producto()
@@ -25,61 +25,24 @@ namespace Trabajo_Final_Poo
             InitializeComponent();
             List<String> cargar_rubros = gestion_rubro.CargarRubros();
             cmbRubro.DataSource = cargar_rubros;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        //    var rubros = gestion_rubro.Obtener_rubros_desde_archivo(ruta_archivo_rubros);
-        //    cmbRubro.Items.Add(rubros);
-        //    cmbRubro.DataSource = gestion_rubro.cargar_rubros();
-        //    cmbRubro.DisplayMember = "Nombre"; // Asegúrate de que la clase Rubro tenga una propiedad Nombre
-                
-        }
+        }        
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Gestion_producto gestion_Producto = new Gestion_producto();
-            try
+            var producto = new Producto
             {
-                string nombre = txtNombre.Text.Trim();
-                string descripcion = txtdescripcion.Text.Trim();
-                decimal precio_compra = decimal.Parse(txtPrecio.Text.Trim());
-                int stock = int.Parse(txtStock.Text.Trim());
-                string rubro = cmbRubro.SelectedItem?.ToString() ?? string.Empty;
-                DateTime vencimiento = dtpVencimiento.Value.Date;
+                Nombre = txtNombre.Text.Trim(),
+                Descripcion = txtdescripcion.Text.Trim(),
+                PrecioCompra = decimal.TryParse(txtPrecio.Text.Trim(), out var precioCompra) ? precioCompra : 0,
+                Stock = int.TryParse(txtStock.Text.Trim(), out var stock) ? stock : 0,
+                Rubro = cmbRubro.SelectedItem?.ToString() ?? "",
+                FechaVencimiento = dtpVencimiento.Value
+            };
 
-                Producto nuevo_producto = new Producto(nombre, descripcion, precio_compra, stock, rubro, vencimiento);
-
-                // Validar si el rubro existe
-                var rubros_validos = gestion_rubro.CargarRubros();
-                gestion_Producto.Guardar_producto(nuevo_producto);
-
-                MessageBox.Show("Producto agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al agregar el producto: {ex.Message}");
-            }
-            DialogResult resultado = MessageBox.Show("¿Desea ingresar otro producto antes de cerrar este formulario?", "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
-            {
-                LimpiarCampos();
-            }
-            else
-            {
-                this.Close();
-            }
+            var gestor = new Gestion_producto();
+            gestor.Agregar_producto(producto);
+            MessageBox.Show("Producto agregado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LimpiarCampos();
         }
         private void LimpiarCampos()
         {

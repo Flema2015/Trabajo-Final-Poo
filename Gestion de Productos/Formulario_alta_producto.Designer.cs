@@ -53,7 +53,6 @@
             this.lblNombre.Size = new System.Drawing.Size(62, 16);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
-            this.lblNombre.Click += new System.EventHandler(this.label1_Click);
             // 
             // label1
             // 
@@ -94,7 +93,6 @@
             this.label4.Size = new System.Drawing.Size(49, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Rubro";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cmbRubro
             // 
@@ -103,7 +101,6 @@
             this.cmbRubro.Name = "cmbRubro";
             this.cmbRubro.Size = new System.Drawing.Size(121, 21);
             this.cmbRubro.TabIndex = 5;
-            this.cmbRubro.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtStock
             // 

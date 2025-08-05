@@ -31,8 +31,11 @@ namespace Trabajo_Final_Poo
 
         public override string ToString()
         {
-            return $"{Nombre} | {Descripcion} |  {PrecioCompra} | {Stock} | {Rubro} | {FechaVencimiento} | ${PrecioVenta}";
+            return InfoCompleta;
         }
+
+        public string InfoCompleta =>
+            $"{Nombre} | {Descripcion} | Compra: {PrecioCompra:C} | Venta: {PrecioVenta:C} | Stock: {Stock} | Rubro: {Rubro} | Vence: {FechaVencimiento:yyyy-MM-dd}";
     }
 
 }

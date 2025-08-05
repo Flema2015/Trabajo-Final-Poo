@@ -10,104 +10,125 @@ namespace Trabajo_Final_Poo
 {
     public class Gestion_producto
     {
-        public string ruta_archivo = "productos.txt";
+        private readonly string ruta_archivo;
+        private const string formato_fecha = "dd/MM/yyyy";
+
+        public Gestion_producto(string nombre_archivo = "productos.txt")
+        {
+            ruta_archivo = Path.Combine(Application.StartupPath, nombre_archivo);
+        }
+
+        public void Agregar_producto(Producto producto)
+        {
+            string[] campos = new[]
+            {
+                producto.Nombre,
+                producto.Descripcion,
+                producto.PrecioCompra.ToString("F2"),
+                producto.PrecioVenta.ToString("F2"),
+                producto.Stock.ToString(),
+                producto.Rubro,
+                producto.FechaVencimiento.ToString(formato_fecha)
+            };
+
+            string linea = string.Join("|", campos);
+
+            File.AppendAllText(ruta_archivo, linea + Environment.NewLine, Encoding.UTF8);
+        }
 
         public List<Producto> Obtener_productos()
-        {
-            var productos = new List<Producto>();
+        { 
+            var lista = new List<Producto>();
 
             if (!File.Exists(ruta_archivo))
-                return productos;
-            foreach (var linea in File.ReadAllLines(ruta_archivo))
+                return lista;
+            
+            var lineas = File.ReadAllLines(ruta_archivo, Encoding.UTF8);
+
+            foreach (var linea in lineas)
             {
                 var partes = linea.Split('|');
-
-                if (partes.Length == 6)
-                {
-                    string nombre = partes[0].Trim();
-                    string descripcion = partes[1].Trim();
-                    if (!decimal.TryParse(partes[2].Trim(), out decimal precio_compra))
-                        continue;
-                    if (!int.TryParse(partes[3].Trim(), out int stock))
-                        continue; 
-                    string rubro = partes[4].Trim();
-                    if (!DateTime.TryParse(partes[5].Trim(), out DateTime vencimiento))
-                        continue;
-
-
-
-                    productos.Add(new Producto(nombre, descripcion, precio_compra, stock, rubro, vencimiento));
-                }
+                if (partes.Length < 7) 
+                    continue;
+                
+                string nombre = partes[0].Trim();
+                string descripcion = partes[1].Trim();
+                if (!decimal.TryParse(partes[2].Trim(), out decimal precioCompra))
+                    continue;
+                if (!decimal.TryParse(partes[3].Trim(), out decimal precioVenta))
+                    continue;
+                if (!int.TryParse(partes[4].Trim(), out int stock))
+                    continue;
+                string rubro = partes[5].Trim();
+                if (!DateTime.TryParseExact(partes[6].Trim(), formato_fecha, null, System.Globalization.DateTimeStyles.None, out DateTime fechaVencimiento))
+                    continue;
+                
+                var producto = new Producto(nombre, descripcion, precioCompra, stock, rubro, fechaVencimiento);
+                
+                lista.Add(producto);
             }
 
-            return productos;
-        }
-        public Producto Obtener_producto_por_nombre(string nombre) =>
-           Obtener_productos()
-           .FirstOrDefault(p =>
-               p.Nombre.Equals(nombre,
-               StringComparison.OrdinalIgnoreCase));
-        public void Alta_producto(Producto nuevo_producto, List<string> rubros_validos)
-        {
-            if (!rubros_validos.Contains(nuevo_producto.Rubro, StringComparer.OrdinalIgnoreCase))
-                throw new InvalidOperationException("El rubro asignado al producto no existe.");
-
-            var productos = Obtener_productos();
-            productos.Add(nuevo_producto);
-            Guardar_productos(productos);
+            return lista;
         }
 
-        public void Modificar_producto(string nombre_viejo, Producto producto_modificado)
+        public void Modificar_producto(Producto producto_modificado)
         {
             var productos = Obtener_productos();
-            var index = productos.FindIndex(p => p.Nombre.Equals(nombre_viejo, StringComparison.OrdinalIgnoreCase));
-            if (index == -1)
-                throw new InvalidOperationException("El producto no fue encontrado.");
-
+            
+            int index = productos.FindIndex(p => p.Nombre == producto_modificado.Nombre);
+            
+            if (index < 0)
+                return;
+           
             productos[index] = producto_modificado;
-            Guardar_productos(productos);
+
+            var lineas = productos.Select(p =>
+            {
+                string[] campos = new[]
+                {
+                    p.Nombre,
+                    p.Descripcion,
+                    p.PrecioCompra.ToString("F2"),
+                    p.PrecioVenta.ToString("F2"),
+                    p.Stock.ToString(),
+                    p.Rubro,
+                    p.FechaVencimiento.ToString(formato_fecha)
+                };
+                return string.Join("|", campos);
+            }).ToArray();
+
+            File.WriteAllLines(ruta_archivo, lineas, Encoding.UTF8);
+
         }
+
         public void Eliminar_producto(string nombre_producto)
         {
             var productos = Obtener_productos();
-            var index = productos.FindIndex(p => p.Nombre.Equals(nombre_producto, StringComparison.OrdinalIgnoreCase));
-            if (index == -1)
-                throw new InvalidOperationException("El producto no fue encontrado.");
+
+            int index = productos.FindIndex(p => 
+            p.Nombre.Equals(nombre_producto, StringComparison.OrdinalIgnoreCase));
+
+            if (index < 0)
+                return;
 
             productos.RemoveAt(index);
-            Guardar_productos(productos);
-        }
 
-        public void Guardar_productos(List<Producto> productos)
-        {
             var lineas = productos.Select(p =>
-                $"{p.Nombre}|{p.Descripcion}|{p.PrecioCompra}|{p.Stock}|{p.Rubro}|{p.FechaVencimiento.ToShortDateString()}"
-            );
-            File.WriteAllLines(ruta_archivo, lineas);
-        }
-
-        public void GestorArchivos(string nombreArchivo = "productos.txt")
-        {
-            string carpeta = Path.Combine(Application.StartupPath, "Datos");
-            Directory.CreateDirectory(carpeta);
-            ruta_archivo = Path.Combine(carpeta, nombreArchivo);
-        }
-
-        public void Guardar_producto(Producto producto)
-        {
-            using (StreamWriter sw = new StreamWriter(ruta_archivo, append: true))
             {
-                sw.WriteLine(producto.ToString());
-            }
-        }
+                string[] campos = new[]
+                {
+                    p.Nombre,
+                    p.Descripcion,
+                    p.PrecioCompra.ToString("F2"),
+                    p.PrecioVenta.ToString("F2"),
+                    p.Stock.ToString(),
+                    p.Rubro,
+                    p.FechaVencimiento.ToString(formato_fecha)
+                };
+                return string.Join("|", campos);
+            }).ToArray();
 
-        public List<string> LeerLineas()
-        {
-            if (!File.Exists(ruta_archivo))
-                return new List<string>();
-
-            // File.ReadAllLines devuelve string[], lo convertimos a List<string>
-            return File.ReadAllLines(ruta_archivo, Encoding.UTF8).ToList();
+            File.WriteAllLines(ruta_archivo, lineas, Encoding.UTF8 );
         }
 
     }

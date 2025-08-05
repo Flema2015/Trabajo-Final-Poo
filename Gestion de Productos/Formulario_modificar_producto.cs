@@ -14,77 +14,89 @@ namespace Trabajo_Final_Poo.Gestion_de_Productos
 {
     public partial class Formulario_modificar_producto : Form
     {
-        const string CARPETA = "files";
-        string ruta_archivo_producto = Path.Combine(CARPETA, "productos.txt");
-        string ruta_archivo_rubros = Path.Combine(CARPETA, "rubros.txt");
+
         Gestion_rubro gestion_rubro = new Gestion_rubro();
-        Gestion_producto gestion_Producto = new Gestion_producto();
+        Gestion_producto gestion_producto = new Gestion_producto();
         public Formulario_modificar_producto()
         {
             InitializeComponent();
-            //if (lstProductos.SelectedItems != null)
-            //{
-            //    List<String> cargar_rubros = gestion_rubro.CargarRubros();
-            //    cmbRubro.DataSource = cargar_rubros;
-            //}
-            
+            lstProductos.SelectedIndexChanged += lstProductos_SelectedIndexChanged;
+            cmbRubro.DataSource = gestion_rubro.ObtenerRubros();
         }
 
         private void btnBuscar_producto_Click(object sender, EventArgs e)
         {
-            if (cmbRubro.DataSource == null)
-            {
-                cmbRubro.DataSource = gestion_rubro.CargarRubros();
-            }
+            var productos = gestion_producto.Obtener_productos();
             
-            try
-            {
-                var gestor = new Gestion_producto();
-
-                List<string> productos = gestor.LeerLineas();
-                lstProductos.Items.Clear();
-                lstProductos.Items.AddRange(productos.ToArray());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al buscar productos: {ex.Message}");
-            }
-            
+            lstProductos.DataSource = null;
+            lstProductos.DisplayMember = "InfoCompleta";
+            lstProductos.DataSource = productos;
         }
 
         private void lstProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstProductos.SelectedItems != null)
+            
+            if (lstProductos.SelectedItem is Producto producto_seleccionado)
             {
-                //Gestion_producto gestion_Producto = new Gestion_producto();
-                Producto producto = new Producto();
-                producto = lstProductos.SelectedItem as Producto;
-                if (producto != null)
-                {
-                    txtNombre.Text = producto.Nombre;
-                    txtdescripcion.Text = producto.Descripcion;
-                    txtPrecio.Text = producto.PrecioCompra.ToString();
-                    txtStock.Text = producto.Stock.ToString();
-                    cmbRubro.SelectedItem = producto.Rubro;
-                    dtpVencimiento.Value = producto.FechaVencimiento;
-                }
-
+                txtNombre.Text = producto_seleccionado.Nombre;
+                txtdescripcion.Text = producto_seleccionado.Descripcion;
+                txtPrecio.Text = producto_seleccionado.PrecioCompra.ToString("N2");
+                txtStock.Text = producto_seleccionado.Stock.ToString();
+                cmbRubro.SelectedItem = producto_seleccionado.Rubro;
+                dtpVencimiento.Value = producto_seleccionado.FechaVencimiento;
             }
-        }
-        private void LimpiarCampos()
-        {
-            txtNombre.Text = "";
-            txtPrecio.Text = "";
-            txtdescripcion.Text = "";
-            txtStock.Text = "";
-            cmbRubro.SelectedIndex = -1;
-            dtpVencimiento.Value = DateTime.Now;
-            txtNombre.Focus();
+
         }
 
+        private void Recargar_lista()
+        {
+            var lista = gestion_producto.Obtener_productos();
+
+            lstProductos.DataSource = null;
+            lstProductos.DisplayMember = "InfoCompleta";
+            lstProductos.DataSource = lista;
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            var modificado = new Producto
+            {
+                Nombre = txtNombre.Text.Trim(),
+                Descripcion = txtdescripcion.Text.Trim(),
+                PrecioCompra = decimal.TryParse(txtPrecio.Text, out decimal precioCompra) ? precioCompra : 0,
+                Stock = int.TryParse(txtStock.Text, out int stock) ? stock : 0,
+                Rubro = cmbRubro.SelectedItem?.ToString() ?? string.Empty,
+                FechaVencimiento = dtpVencimiento.Value
+            };
+
+            gestion_producto.Modificar_producto(modificado);
+
+            Recargar_lista();
+        }
+
+        private void btnElimar_Click(object sender, EventArgs e)
+        {
+            Producto seleccionado = lstProductos.SelectedItem as Producto;
+
+            if (seleccionado == null)
+                return;
+
+            DialogResult confirm = MessageBox.Show(
+                $"¿Seguro quiere eliminar '{seleccionado.Nombre}'?",
+                "Confirmar eliminacion",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
+            gestion_producto.Eliminar_producto(seleccionado.Nombre);
+
+            Recargar_lista();
         }
     }
 }

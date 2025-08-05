@@ -16,7 +16,7 @@ namespace Trabajo_Final_Poo.Gestión_de_Proveedores
         public Formulario_modificar_proveedor()
         {
             InitializeComponent();
-            
+           
         }
 
         private void btnBuscarProveedores_Click(object sender, EventArgs e)
