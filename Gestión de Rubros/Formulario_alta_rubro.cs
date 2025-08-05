@@ -27,7 +27,7 @@ namespace Trabajo_Final_Poo.Gestión_de_Rubros
                 MessageBox.Show("El nombre del rubro no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            gestion_rubro.AgregarRubro(nuevoRubro);
+            gestion_rubro.Agregar_rubro(nuevoRubro);
             lstRubros.DataSource = gestion_rubro.ObtenerRubros();
             txtAgregarRubro.Clear();
         }
@@ -47,10 +47,15 @@ namespace Trabajo_Final_Poo.Gestión_de_Rubros
                 MessageBoxIcon.Warning);
             if (confirm == DialogResult.Yes)
                 {
-                gestion_rubro.EliminarRubro(rubroSeleccionado);
+                gestion_rubro.Eliminar_rubro(rubroSeleccionado);
                 lstRubros.DataSource = gestion_rubro.ObtenerRubros();
             }
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
