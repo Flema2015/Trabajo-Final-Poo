@@ -203,5 +203,20 @@ namespace Trabajo_Final_Poo
                 form_stock_rubro.Show();
             }
         }
+
+        private void movimientoDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_movimientos_por_proveedor"];
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+            if (form_open == null)
+            {
+                Formulario_movimientos_por_proveedor form_movimiento_proveedor = new Formulario_movimientos_por_proveedor();
+                form_movimiento_proveedor.MdiParent = this;
+                form_movimiento_proveedor.Dock = DockStyle.Fill;
+                form_movimiento_proveedor.FormBorderStyle = FormBorderStyle.None;
+                form_movimiento_proveedor.Show();
+            }
+        }
     }
 }

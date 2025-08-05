@@ -22,7 +22,7 @@ namespace Trabajo_Final_Poo.Gestión_de_Rubros
             foreach (var linea in File.ReadAllLines(rutaArchivo))
             {
                 var p = linea.Split('|');
-                if (p.Length == 7)
+                if (p.Length == 5)
                 {
                     var mov = new Movimiento(
                         idCounter++,
@@ -51,10 +51,6 @@ namespace Trabajo_Final_Poo.Gestión_de_Rubros
             var lista = Obtener_movimientos();
             lista.Add(mov);
             Guardar_todos(lista);
-        }
-
-
-        
-
+        }       
     }
 }

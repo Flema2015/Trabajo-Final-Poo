@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Trabajo_Final_Poo.Gestión_de_movimientos;
 using Trabajo_Final_Poo.Gestión_de_Rubros;
 
@@ -93,22 +95,34 @@ namespace Trabajo_Final_Poo
             return resultado;
         }
 
-        //public List<string> Listar_ingresos_por_proveedor(string nombre_proveedor)
-        //{
-        //    var proveedor = gestion_proveedores
-        //        .Obtener_proveedor_por_nombre(nombre_proveedor);
-        //    if (proveedor == null)
-        //        throw new ArgumentException(
-        //            $"No se encontró un proveedor con nombre '{nombre_proveedor}'",
-        //            nameof(nombre_proveedor));
+        public List<string> Listar_ingresos_por_proveedor(string nombre_proveedor)
+        {
+            var movimientos = gestion_Movimientos.Obtener_movimientos();
 
-        //    var movimientos = gestion_Movimientos.Obtener_movimientos();
+            var proveedores = movimientos
+                .Select(m => m.Proveedor)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
 
+            if(!proveedores.Contains(nombre_proveedor, StringComparer.OrdinalIgnoreCase))
+            {
+                MessageBox.Show($"No se encontró un proveedor con nombre '{nombre_proveedor}'", 
+                    "Error", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error
+                    );
+                return new List<string>();
+            }
 
-        //    return movimientos
-        //        .Select(m => m.nombre_producto)
-        //        .ToList();
-        //}
+            var ingresos = movimientos
+                .Where(m =>
+                string.Equals(m.Proveedor, nombre_proveedor, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            return ingresos
+                .Select(m => $"{m.Fecha.ToShortDateString()} - {m.Producto} - {m.Stock} unidades")
+                .ToList();
+        }
 
         public List<Stock_info_producto> Producto_con_bajo_stock()
         {

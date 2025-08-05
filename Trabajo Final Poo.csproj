@@ -197,6 +197,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\Formulario_movimientos_por_proveedor.resx">
+      <DependentUpon>Formulario_movimientos_por_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Formulario_stock_por_producto.resx">
       <DependentUpon>Formulario_stock_por_producto.cs</DependentUpon>
     </EmbeddedResource>
