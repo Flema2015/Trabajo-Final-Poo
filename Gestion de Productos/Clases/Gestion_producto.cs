@@ -130,6 +130,51 @@ namespace Trabajo_Final_Poo
 
             File.WriteAllLines(ruta_archivo, lineas, Encoding.UTF8 );
         }
+        public void actualizar_stock(string nombre_producto, int cantida_ingresada)
+        {
+            var productos = Obtener_productos();
+            foreach (var producto in productos)
+            {
+                if(producto.Nombre.Equals(nombre_producto, StringComparison.OrdinalIgnoreCase))
+                {
+                    producto.Stock += cantida_ingresada;
+                    break;
+                }
+            }
+            Guardar_productos(productos);
+            
+        }
+        public void actualizar_stock_baja(string nombre_producto, int cantida_ingresada)
+        {
+            var productos = Obtener_productos();
+            foreach (var producto in productos)
+            {
+                if (producto.Nombre.Equals(nombre_producto, StringComparison.OrdinalIgnoreCase))
+                {
+                    producto.Stock -= cantida_ingresada;
+                    break;
+                }
+            }
+            Guardar_productos(productos);
+        }
+        private void Guardar_productos(List<Producto> productos)
+        {
+            var lineas = productos.Select(p =>
+            {
+                string[] campos = new[]
+                {
+                    p.Nombre,
+                    p.Descripcion,
+                    p.PrecioCompra.ToString("F2"),
+                    p.PrecioVenta.ToString("F2"),
+                    p.Stock.ToString(),
+                    p.Rubro,
+                    p.FechaVencimiento.ToString(formato_fecha)
+                };
+                return string.Join("|", campos);
+            }).ToArray();
 
+            File.WriteAllLines(ruta_archivo, lineas, Encoding.UTF8);
+        }
     }
 }

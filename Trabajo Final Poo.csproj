@@ -54,12 +54,6 @@
     <Compile Include="Gestion de Productos\Formulario_alta_producto.Designer.cs">
       <DependentUpon>Formulario_alta_producto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestion de Productos\Formulario_baja_producto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestion de Productos\Formulario_baja_producto.Designer.cs">
-      <DependentUpon>Formulario_baja_producto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Gestion de Productos\Formulario_modificar_producto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +193,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion de Productos\Formulario_modificar_producto.resx">
       <DependentUpon>Formulario_modificar_producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestión de movimientos\Formulario_egreso_stock.resx">
+      <DependentUpon>Formulario_egreso_stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestión de movimientos\Formulario_ingreso_stock.resx">
+      <DependentUpon>Formulario_ingreso_stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestión de Proveedores\Formulario_alta_proveedor.resx">
       <DependentUpon>Formulario_alta_proveedor.cs</DependentUpon>

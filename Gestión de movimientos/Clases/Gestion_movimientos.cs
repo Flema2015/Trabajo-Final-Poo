@@ -22,13 +22,15 @@ namespace Trabajo_Final_Poo.Gestión_de_Rubros
             foreach (var linea in File.ReadAllLines(rutaArchivo))
             {
                 var p = linea.Split('|');
-                if (p.Length == 6)
+                if (p.Length == 7)
                 {
                     var mov = new Movimiento(
                         idCounter++,
                         DateTime.Parse(p[0].Trim()),
                         p[1].Trim(),
-                        int.Parse(p[2].Trim())
+                        p[2].Trim(),
+                        int.Parse(p[3].Trim()),
+                        p[4].Trim()
                     );
                     lista.Add(mov);
                 }
@@ -39,7 +41,7 @@ namespace Trabajo_Final_Poo.Gestión_de_Rubros
         public void Guardar_todos(List<Movimiento> lista)
         {
             var lineas = lista.Select(m =>
-                $"{m.Fecha:yyyy-MM-dd} | {m.Proveedor} | {m.Stock}"
+                $"{m.Fecha:yyyy-MM-dd} |  {m.Producto}  | {m.Proveedor} | {m.Stock} | {m.Motivo}"
             );
             File.WriteAllLines(rutaArchivo, lineas);
         }

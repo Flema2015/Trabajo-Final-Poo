@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Trabajo_Final_Poo.Gestión_de_movimientos;
 using Trabajo_Final_Poo.Gestion_de_Productos;
 using Trabajo_Final_Poo.Gestión_de_Proveedores;
 
@@ -90,16 +91,7 @@ namespace Trabajo_Final_Poo
         //    }
         //}
 
-        private void bajaProductoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form form_open = Application.OpenForms["Formulario_baja_producto"];
-            if (form_open == null)
-            {
-                Formulario_baja_producto form_baja = new Formulario_baja_producto();
-                form_baja.MdiParent = this;
-                form_baja.Show();
-            }
-        }
+   
 
         private void altaProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -120,6 +112,28 @@ namespace Trabajo_Final_Poo
                 Formulario_modificar_proveedor form_modificar_proveedor = new Formulario_modificar_proveedor();
                 form_modificar_proveedor.MdiParent = this;
                 form_modificar_proveedor.Show();
+            }
+        }
+
+        private void ingresoDeStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_ingreso_stock"];
+            if (form_open == null)
+            {
+                Formulario_ingreso_stock form_ingreso_stock = new Formulario_ingreso_stock();
+                form_ingreso_stock.MdiParent = this;
+                form_ingreso_stock.Show();
+            }
+        }
+
+        private void egresoDeStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_egreso_stock"];
+            if (form_open == null)
+            {
+                Formulario_egreso_stock form_egreso_stock = new Formulario_egreso_stock();
+                form_egreso_stock.MdiParent = this;
+                form_egreso_stock.Show();
             }
         }
     }
