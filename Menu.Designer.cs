@@ -200,6 +200,7 @@
             this.stockDeProductoToolStripMenuItem.Name = "stockDeProductoToolStripMenuItem";
             this.stockDeProductoToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.stockDeProductoToolStripMenuItem.Text = "Stock de Producto";
+            this.stockDeProductoToolStripMenuItem.Click += new System.EventHandler(this.stockDeProductoToolStripMenuItem_Click);
             // 
             // stockDeRubroToolStripMenuItem
             // 
