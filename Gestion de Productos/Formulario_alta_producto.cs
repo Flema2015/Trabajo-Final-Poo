@@ -16,8 +16,6 @@ namespace Trabajo_Final_Poo
     public partial class Formulario_alta_producto : Form
     {
 
-        string ruta_archivo_producto = Path.Combine(Application.StartupPath, "productos.txt");
-        string ruta_archivo_rubros = Path.Combine(Application.StartupPath, "rubros.txt");
         Gestion_rubro gestion_rubro = new Gestion_rubro();
 
         public Formulario_alta_producto()
