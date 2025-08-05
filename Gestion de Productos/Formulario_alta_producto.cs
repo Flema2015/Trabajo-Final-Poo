@@ -23,7 +23,7 @@ namespace Trabajo_Final_Poo
         public Formulario_alta_producto()
         {
             InitializeComponent();
-            List<String> cargar_rubros = gestion_rubro.CargarRubros();
+            List<String> cargar_rubros = gestion_rubro.ObtenerRubros();
             cmbRubro.DataSource = cargar_rubros;
         }        
 

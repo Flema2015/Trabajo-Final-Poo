@@ -106,36 +106,12 @@
     <Compile Include="Gestión de Proveedores\Formulario_modificar_proveedor.Designer.cs">
       <DependentUpon>Formulario_modificar_proveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestión de Proveedores\Formulario_todos_los_proveedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestión de Proveedores\Formulario_todos_los_proveedores.Designer.cs">
-      <DependentUpon>Formulario_todos_los_proveedores.cs</DependentUpon>
-    </Compile>
     <Compile Include="Gestión de Rubros\Clases\Gestion_rubro.cs" />
     <Compile Include="Gestión de Rubros\Formulario_alta_rubro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Gestión de Rubros\Formulario_alta_rubro.Designer.cs">
       <DependentUpon>Formulario_alta_rubro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Gestión de Rubros\Formulario_baja_rubro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestión de Rubros\Formulario_baja_rubro.Designer.cs">
-      <DependentUpon>Formulario_baja_rubro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Gestión de Rubros\Formulario_modificar_rubro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestión de Rubros\Formulario_modificar_rubro.Designer.cs">
-      <DependentUpon>Formulario_modificar_rubro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Gestión de Rubros\Formulario_todos_los_rubros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestión de Rubros\Formulario_todos_los_rubros.Designer.cs">
-      <DependentUpon>Formulario_todos_los_rubros.cs</DependentUpon>
     </Compile>
     <Compile Include="Integrantes\Formulario_Emanuel.cs">
       <SubType>Form</SubType>
@@ -205,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gestión de Proveedores\Formulario_modificar_proveedor.resx">
       <DependentUpon>Formulario_modificar_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestión de Rubros\Formulario_alta_rubro.resx">
+      <DependentUpon>Formulario_alta_rubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
