@@ -119,6 +119,10 @@ namespace Trabajo_Final_Poo
         private void ingresoDeStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form form_open = Application.OpenForms["Formulario_ingreso_stock"];
+
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+
             if (form_open == null)
             {
                 Formulario_ingreso_stock form_ingreso_stock = new Formulario_ingreso_stock();
@@ -132,6 +136,10 @@ namespace Trabajo_Final_Poo
         private void egresoDeStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form form_open = Application.OpenForms["Formulario_egreso_stock"];
+
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+
             if (form_open == null)
             {
                 Formulario_egreso_stock form_egreso_stock = new Formulario_egreso_stock();
