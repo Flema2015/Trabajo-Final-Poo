@@ -12,9 +12,45 @@ namespace Trabajo_Final_Poo.Gestión_de_Rubros
 {
     public partial class Formulario_alta_rubro : Form
     {
+        private Gestion_rubro gestion_rubro = new Gestion_rubro();
         public Formulario_alta_rubro()
         {
             InitializeComponent();
+            lstRubros.DataSource = gestion_rubro.ObtenerRubros();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            string nuevoRubro = txtAgregarRubro.Text.Trim();
+            if (string.IsNullOrEmpty(nuevoRubro))
+            {
+                MessageBox.Show("El nombre del rubro no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            gestion_rubro.AgregarRubro(nuevoRubro);
+            lstRubros.DataSource = gestion_rubro.ObtenerRubros();
+            txtAgregarRubro.Clear();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            var rubroSeleccionado = lstRubros.SelectedItem as string;
+            if (rubroSeleccionado == null)
+            {
+                MessageBox.Show("Debe seleccionar un rubro para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DialogResult confirm = MessageBox.Show(
+                $"¿Seguro quiere eliminar '{rubroSeleccionado}'?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if (confirm == DialogResult.Yes)
+                {
+                gestion_rubro.EliminarRubro(rubroSeleccionado);
+                lstRubros.DataSource = gestion_rubro.ObtenerRubros();
+            }
+
         }
     }
 }

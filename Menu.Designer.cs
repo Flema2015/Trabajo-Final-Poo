@@ -38,10 +38,6 @@
             this.productosDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeRubrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaDeRubroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaRubroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rubrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -146,40 +142,11 @@
             // 
             // gestiónDeRubrosToolStripMenuItem
             // 
-            this.gestiónDeRubrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaDeRubroToolStripMenuItem,
-            this.modificaciónToolStripMenuItem,
-            this.bajaRubroToolStripMenuItem,
-            this.rubrosToolStripMenuItem});
             this.gestiónDeRubrosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestiónDeRubrosToolStripMenuItem.Name = "gestiónDeRubrosToolStripMenuItem";
             this.gestiónDeRubrosToolStripMenuItem.Size = new System.Drawing.Size(132, 21);
             this.gestiónDeRubrosToolStripMenuItem.Text = "Gestión de Rubros";
-            // 
-            // altaDeRubroToolStripMenuItem
-            // 
-            this.altaDeRubroToolStripMenuItem.Name = "altaDeRubroToolStripMenuItem";
-            this.altaDeRubroToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.altaDeRubroToolStripMenuItem.Text = "Alta Rubro";
-            // 
-            // modificaciónToolStripMenuItem
-            // 
-            this.modificaciónToolStripMenuItem.Name = "modificaciónToolStripMenuItem";
-            this.modificaciónToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.modificaciónToolStripMenuItem.Text = "Modificar  Rubro";
-            this.modificaciónToolStripMenuItem.Click += new System.EventHandler(this.modificaciónToolStripMenuItem_Click);
-            // 
-            // bajaRubroToolStripMenuItem
-            // 
-            this.bajaRubroToolStripMenuItem.Name = "bajaRubroToolStripMenuItem";
-            this.bajaRubroToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.bajaRubroToolStripMenuItem.Text = "Baja Rubro";
-            // 
-            // rubrosToolStripMenuItem
-            // 
-            this.rubrosToolStripMenuItem.Name = "rubrosToolStripMenuItem";
-            this.rubrosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.rubrosToolStripMenuItem.Text = "Rubros";
+            this.gestiónDeRubrosToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeRubrosToolStripMenuItem_Click);
             // 
             // gestiónDeProveedoresToolStripMenuItem
             // 
@@ -196,7 +163,7 @@
             // altaProveedoresToolStripMenuItem
             // 
             this.altaProveedoresToolStripMenuItem.Name = "altaProveedoresToolStripMenuItem";
-            this.altaProveedoresToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.altaProveedoresToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.altaProveedoresToolStripMenuItem.Text = "Alta Proveedor";
             this.altaProveedoresToolStripMenuItem.Click += new System.EventHandler(this.altaProveedoresToolStripMenuItem_Click);
             // 
@@ -210,7 +177,7 @@
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             // 
             // gestiónDeMovimientosToolStripMenuItem
@@ -352,10 +319,6 @@
         private System.Windows.Forms.ToolStripMenuItem modificarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bajaProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosDToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaDeRubroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificaciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bajaRubroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rubrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Trabajo_Final_Poo.Gestion_de_Productos;
 using Trabajo_Final_Poo.Gestión_de_Proveedores;
+using Trabajo_Final_Poo.Gestión_de_Rubros;
 
 namespace Trabajo_Final_Poo
 {
@@ -121,6 +122,17 @@ namespace Trabajo_Final_Poo
                 form_modificar_proveedor.MdiParent = this;
                 form_modificar_proveedor.Show();
             }
+        }
+
+        private void gestiónDeRubrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_alta_rubro"];
+            if (form_open == null)
+            {
+                Formulario_alta_rubro form_gestion_rubros = new Formulario_alta_rubro();
+                form_gestion_rubros.MdiParent = this;
+                form_gestion_rubros.Show();
+            }   
         }
     }
 }
