@@ -72,24 +72,15 @@ namespace Trabajo_Final_Poo
             if (form_open == null)
             {
 
-                Formulario_alta_producto form_alta = new Formulario_alta_producto();
-                form_alta.MdiParent = this;
-                form_alta.Show();
+
+                Formulario_alta_producto form_alta_producto = new Formulario_alta_producto();
+                form_alta_producto.MdiParent = this;
+                form_alta_producto.Dock = DockStyle.Fill;
+                form_alta_producto.FormBorderStyle = FormBorderStyle.None;
+                form_alta_producto.Show();
             }
         }
 
-        //private void modificarProductoToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    Form form_open = Application.OpenForms["Formulario_modificar_producto"];
-        //    if (form_open == null)
-        //    {
-        //        Formulario_modificar_producto form_modificar = new Formulario_modificar_producto();
-        //        form_modificar.MdiParent = this;
-        //        form_modificar.Show();
-        //    }
-        //}
-
-   
 
 
         private void altaProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,15 +116,19 @@ namespace Trabajo_Final_Poo
                 form_modificar_proveedor.Show();
             }
         }
-
-
         private void ingresoDeStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form form_open = Application.OpenForms["Formulario_ingreso_stock"];
+
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+
             if (form_open == null)
             {
                 Formulario_ingreso_stock form_ingreso_stock = new Formulario_ingreso_stock();
                 form_ingreso_stock.MdiParent = this;
+                form_ingreso_stock.Dock = DockStyle.Fill;
+                form_ingreso_stock.FormBorderStyle = FormBorderStyle.None;
                 form_ingreso_stock.Show();
             }
         }
@@ -141,12 +136,39 @@ namespace Trabajo_Final_Poo
         private void egresoDeStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form form_open = Application.OpenForms["Formulario_egreso_stock"];
+
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+
             if (form_open == null)
             {
                 Formulario_egreso_stock form_egreso_stock = new Formulario_egreso_stock();
                 form_egreso_stock.MdiParent = this;
+                form_egreso_stock.Dock = DockStyle.Fill;
+                form_egreso_stock.FormBorderStyle = FormBorderStyle.None;
                 form_egreso_stock.Show();
             }
+        }
+        private void gestiónDeRubrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_alta_rubro"];
+
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+
+            if (form_open == null)
+            {
+                Formulario_alta_rubro form_gestion_rubros = new Formulario_alta_rubro();
+                form_gestion_rubros.MdiParent = this;
+                form_gestion_rubros.Dock = DockStyle.Fill;
+                form_gestion_rubros.FormBorderStyle = FormBorderStyle.None;
+                form_gestion_rubros.Show();
+            }   
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

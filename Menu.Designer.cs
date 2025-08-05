@@ -112,10 +112,6 @@
             this.modificarProductoToolStripMenuItem.Text = "Modificar/Eliminar Producto";
             this.modificarProductoToolStripMenuItem.Click += new System.EventHandler(this.modificaciónToolStripMenuItem_Click);
             // 
-            // bajaProductoToolStripMenuItem
-            // 
-         
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -148,10 +144,6 @@
             this.modificarProveedorToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.modificarProveedorToolStripMenuItem.Text = "Modificar/Eliminar Proveedor";
             this.modificarProveedorToolStripMenuItem.Click += new System.EventHandler(this.modificarProveedorToolStripMenuItem_Click);
-            // 
-            // proveedoresToolStripMenuItem
-            // 
-       
             // 
             // gestiónDeMovimientosToolStripMenuItem
             // 
