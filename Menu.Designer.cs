@@ -204,12 +204,14 @@
             this.stockDeProductoToolStripMenuItem.Name = "stockDeProductoToolStripMenuItem";
             this.stockDeProductoToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.stockDeProductoToolStripMenuItem.Text = "Stock de Producto";
+            this.stockDeProductoToolStripMenuItem.Click += new System.EventHandler(this.stockDeProductoToolStripMenuItem_Click);
             // 
             // stockDeRubroToolStripMenuItem
             // 
             this.stockDeRubroToolStripMenuItem.Name = "stockDeRubroToolStripMenuItem";
             this.stockDeRubroToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.stockDeRubroToolStripMenuItem.Text = "Stock de Rubro";
+            this.stockDeRubroToolStripMenuItem.Click += new System.EventHandler(this.stockDeRubroToolStripMenuItem_Click);
             // 
             // movimientoDeProveedoresToolStripMenuItem
             // 

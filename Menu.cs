@@ -11,6 +11,7 @@ using Trabajo_Final_Poo.Gestión_de_movimientos;
 using Trabajo_Final_Poo.Gestion_de_Productos;
 using Trabajo_Final_Poo.Gestión_de_Proveedores;
 using Trabajo_Final_Poo.Gestión_de_Rubros;
+using Trabajo_Final_Poo.Reportes;
 
 namespace Trabajo_Final_Poo
 {
@@ -169,6 +170,38 @@ namespace Trabajo_Final_Poo
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void stockDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_stock_producto"];
+
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+
+            if (form_open == null)
+            {
+                Formulario_stock_por_producto form_stock_producto = new Formulario_stock_por_producto();
+                form_stock_producto.MdiParent = this;
+                form_stock_producto.Dock = DockStyle.Fill;
+                form_stock_producto.FormBorderStyle = FormBorderStyle.None;
+                form_stock_producto.Show();
+            }
+        }
+
+        private void stockDeRubroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_stock_por_rubro"];
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+            if (form_open == null)
+            {
+                Formulario_stock_por_rubro form_stock_rubro = new Formulario_stock_por_rubro();
+                form_stock_rubro.MdiParent = this;
+                form_stock_rubro.Dock = DockStyle.Fill;
+                form_stock_rubro.FormBorderStyle = FormBorderStyle.None;
+                form_stock_rubro.Show();
+            }
         }
     }
 }
