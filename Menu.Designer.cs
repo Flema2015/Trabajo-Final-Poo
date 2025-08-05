@@ -207,6 +207,7 @@
             this.stockDeRubroToolStripMenuItem.Name = "stockDeRubroToolStripMenuItem";
             this.stockDeRubroToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.stockDeRubroToolStripMenuItem.Text = "Stock de Rubro";
+            this.stockDeRubroToolStripMenuItem.Click += new System.EventHandler(this.stockDeRubroToolStripMenuItem_Click);
             // 
             // movimientoDeProveedoresToolStripMenuItem
             // 

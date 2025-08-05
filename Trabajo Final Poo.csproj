@@ -194,6 +194,9 @@
     <EmbeddedResource Include="Reportes\Formulario_stock_por_producto.resx">
       <DependentUpon>Formulario_stock_por_producto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Formulario_stock_por_rubro.resx">
+      <DependentUpon>Formulario_stock_por_rubro.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

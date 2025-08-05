@@ -22,7 +22,7 @@ namespace Trabajo_Final_Poo
             gestion_rubro = new Gestion_rubro();
             gestion_Movimientos = new Gestion_movimientos();
         }
-        public class Stock_info
+        public class Stock_info_producto
         {
             public string Nombre_producto { get; set; }
             public int cantidad_stock { get; set; }
@@ -30,6 +30,17 @@ namespace Trabajo_Final_Poo
             public override string ToString()
             {
                 return $"Producto: {Nombre_producto}, Stock: {cantidad_stock}";
+            }
+        }
+
+        public class Stock_info_rubro
+        {
+            public string Nombre_rubro { get; set; }
+            public int cantidad_stock { get; set; }
+
+            public override string ToString()
+            {
+                return $"Rubro: {Nombre_rubro}, Stock: {cantidad_stock}";
             }
         }
 
@@ -41,10 +52,10 @@ namespace Trabajo_Final_Poo
             public string Proveedor { get; set; }
         }
 
-        public List<Stock_info> Stock_actual_por_producto()
+        public List<Stock_info_producto> Stock_actual_por_producto()
         {
             var productos = gestion_producto.Obtener_productos();
-            var resultado = new List<Stock_info>();
+            var resultado = new List<Stock_info_producto>();
 
             if (productos == null || productos.Count == 0)
             {
@@ -54,7 +65,7 @@ namespace Trabajo_Final_Poo
 
             foreach (var producto in productos)
             {
-                resultado.Add(new Stock_info
+                resultado.Add(new Stock_info_producto
                 {
                     Nombre_producto = producto.Nombre,    // Asegurate de usar la propiedad correcta
                     cantidad_stock = producto.Stock // O como se llame tu propiedad
@@ -64,20 +75,19 @@ namespace Trabajo_Final_Poo
             return resultado;
         }
 
-        public List<Stock_info> Stock_actual_por_rubro(string rubroBuscado)
+        public List<Stock_info_rubro> Stock_actual_por_rubro(string rubroBuscado)
         {
             // Obtengo toda la lista
-            var productos = gestion_producto.Obtener_productos()
-                            ?? new List<Producto>();
+            var productos = gestion_producto.Obtener_productos();
 
             // Filtro por rubro y proyecto al DTO
             var resultado = productos
                 .Where(p => p.Rubro.Equals(rubroBuscado, StringComparison.OrdinalIgnoreCase))
-                .Select(p => new Stock_info
+                .Select(p => new Stock_info_rubro
                 {
-                    Nombre_producto = p.Nombre,
-                    cantidad_stock = p.Stock
-                })
+                    Nombre_rubro = p.Rubro,  
+                    cantidad_stock = p.Stock 
+                })              
                 .ToList();
 
             return resultado;
@@ -100,10 +110,10 @@ namespace Trabajo_Final_Poo
         //        .ToList();
         //}
 
-        public List<Stock_info> Producto_con_bajo_stock()
+        public List<Stock_info_producto> Producto_con_bajo_stock()
         {
             var productos = gestion_producto.Obtener_productos();
-            var resultado = new List<Stock_info>();
+            var resultado = new List<Stock_info_producto>();
 
             if (productos == null || productos.Count == 0)
             {
@@ -115,7 +125,7 @@ namespace Trabajo_Final_Poo
             {
                 if (producto.Stock <= 10)
                 {
-                    resultado.Add(new Stock_info
+                    resultado.Add(new Stock_info_producto
                     {
                         Nombre_producto = producto.Nombre,    // Asegurate de usar la propiedad correcta
                         cantidad_stock = producto.Stock // O como se llame tu propiedad

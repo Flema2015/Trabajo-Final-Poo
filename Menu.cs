@@ -151,5 +151,20 @@ namespace Trabajo_Final_Poo
                 form_stock_producto.Show();
             }
         }
+
+        private void stockDeRubroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_stock_por_rubro"];
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+            if (form_open == null)
+            {
+                Formulario_stock_por_rubro form_stock_rubro = new Formulario_stock_por_rubro();
+                form_stock_rubro.MdiParent = this;
+                form_stock_rubro.Dock = DockStyle.Fill;
+                form_stock_rubro.FormBorderStyle = FormBorderStyle.None;
+                form_stock_rubro.Show();
+            }
+        }
     }
 }
