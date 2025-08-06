@@ -40,7 +40,7 @@ namespace Trabajo_Final_Poo.Reportes
                 lstlista_stock_bajo.Items.Clear(); // Limpiar la lista antes de agregar nuevos elementos
                 foreach (var mov in historialMovimientos)
                 {
-                    lstlista_stock_bajo.Items.Add($"Producto: {mov.Producto} | Fecha: {mov.Fecha}  |  {mov.Stock} ");
+                    lstlista_stock_bajo.Items.Add($"Producto: {mov.Producto} | Fecha: {mov.Fecha}  | Stock: {mov.Stock} ");
                     
                 }
             }

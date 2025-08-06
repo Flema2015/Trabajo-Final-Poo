@@ -11,6 +11,7 @@ using Trabajo_Final_Poo.Gestión_de_movimientos;
 using Trabajo_Final_Poo.Gestion_de_Productos;
 using Trabajo_Final_Poo.Gestión_de_Proveedores;
 using Trabajo_Final_Poo.Gestión_de_Rubros;
+using Trabajo_Final_Poo.Integrantes;
 using Trabajo_Final_Poo.Reportes;
 
 namespace Trabajo_Final_Poo
@@ -150,22 +151,22 @@ namespace Trabajo_Final_Poo
                 form_egreso_stock.Show();
             }
         }
-        private void gestiónDeRubrosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form form_open = Application.OpenForms["Formulario_alta_rubro"];
+        //private void gestiónDeRubrosToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    Form form_open = Application.OpenForms["Formulario_alta_rubro"];
 
-            foreach (Form child in this.MdiChildren)
-                child.Close();
+        //    foreach (Form child in this.MdiChildren)
+        //        child.Close();
 
-            if (form_open == null)
-            {
-                Formulario_alta_rubro form_gestion_rubros = new Formulario_alta_rubro();
-                form_gestion_rubros.MdiParent = this;
-                form_gestion_rubros.Dock = DockStyle.Fill;
-                form_gestion_rubros.FormBorderStyle = FormBorderStyle.None;
-                form_gestion_rubros.Show();
-            }
-        }
+        //    if (form_open == null)
+        //    {
+        //        Formulario_alta_rubro form_gestion_rubros = new Formulario_alta_rubro();
+        //        form_gestion_rubros.MdiParent = this;
+        //        form_gestion_rubros.Dock = DockStyle.Fill;
+        //        form_gestion_rubros.FormBorderStyle = FormBorderStyle.None;
+        //        form_gestion_rubros.Show();
+        //    }
+        //}
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -247,6 +248,58 @@ namespace Trabajo_Final_Poo
                 form_historial.FormBorderStyle = FormBorderStyle.None;
                 form_historial.Show();
             }
+        }
+
+        private void emanuelHamuiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_Emanuel"];
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+            if (form_open == null)
+            {
+                Formulario_Emanuel formulario_Emanuel = new Formulario_Emanuel();
+                formulario_Emanuel.MdiParent = this;
+                formulario_Emanuel.Dock = DockStyle.Fill;
+                formulario_Emanuel.FormBorderStyle = FormBorderStyle.None;
+                formulario_Emanuel.Show();
+            }
+        }
+
+        private void lucasSuletaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_Lucas"];
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+            if (form_open == null)
+            {
+                Formulario_Lucas formulario_Lucas = new Formulario_Lucas();
+                formulario_Lucas.MdiParent = this;
+                formulario_Lucas.Dock = DockStyle.Fill;
+                formulario_Lucas.FormBorderStyle = FormBorderStyle.None;
+                formulario_Lucas.Show();
+            }
+        }
+
+        private void altaModificarElimanarRubrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_alta_rubro"];
+
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+
+            if (form_open == null)
+            {
+                Formulario_alta_rubro form_gestion_rubros = new Formulario_alta_rubro();
+                form_gestion_rubros.MdiParent = this;
+                form_gestion_rubros.Dock = DockStyle.Fill;
+                form_gestion_rubros.FormBorderStyle = FormBorderStyle.None;
+                form_gestion_rubros.Show();
+            }
+        }
+
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

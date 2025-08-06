@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.gestiónDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeRubrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaModificarElimanarRubrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,10 +48,10 @@
             this.movimientoDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosConBajoStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosDeProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.integrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emanuelHamuiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lucasSuletaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -67,24 +66,14 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(45, 21);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestiónDeProductosToolStripMenuItem,
-            this.toolStripMenuItem1,
             this.gestiónDeRubrosToolStripMenuItem,
             this.gestiónDeProveedoresToolStripMenuItem,
             this.gestiónDeMovimientosToolStripMenuItem,
             this.gestiónDeReportesToolStripMenuItem,
-            this.toolStripMenuItem2,
             this.integrantesToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -116,18 +105,21 @@
             this.modificarProductoToolStripMenuItem.Text = "Modificar/Eliminar Producto";
             this.modificarProductoToolStripMenuItem.Click += new System.EventHandler(this.modificaciónToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 21);
-            // 
             // gestiónDeRubrosToolStripMenuItem
             // 
+            this.gestiónDeRubrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaModificarElimanarRubrosToolStripMenuItem});
             this.gestiónDeRubrosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestiónDeRubrosToolStripMenuItem.Name = "gestiónDeRubrosToolStripMenuItem";
             this.gestiónDeRubrosToolStripMenuItem.Size = new System.Drawing.Size(132, 21);
             this.gestiónDeRubrosToolStripMenuItem.Text = "Gestión de Rubros";
-            this.gestiónDeRubrosToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeRubrosToolStripMenuItem_Click);
+            // 
+            // altaModificarElimanarRubrosToolStripMenuItem
+            // 
+            this.altaModificarElimanarRubrosToolStripMenuItem.Name = "altaModificarElimanarRubrosToolStripMenuItem";
+            this.altaModificarElimanarRubrosToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.altaModificarElimanarRubrosToolStripMenuItem.Text = "Alta/Modificar/Elimanar Rubros";
+            this.altaModificarElimanarRubrosToolStripMenuItem.Click += new System.EventHandler(this.altaModificarElimanarRubrosToolStripMenuItem_Click);
             // 
             // gestiónDeProveedoresToolStripMenuItem
             // 
@@ -232,11 +224,6 @@
             this.movimientosDeProductoToolStripMenuItem.Text = "Movimientos de Producto";
             this.movimientosDeProductoToolStripMenuItem.Click += new System.EventHandler(this.movimientosDeProductoToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(12, 21);
-            // 
             // integrantesToolStripMenuItem
             // 
             this.integrantesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -252,12 +239,22 @@
             this.emanuelHamuiToolStripMenuItem.Name = "emanuelHamuiToolStripMenuItem";
             this.emanuelHamuiToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.emanuelHamuiToolStripMenuItem.Text = "Emanuel Hamui";
+            this.emanuelHamuiToolStripMenuItem.Click += new System.EventHandler(this.emanuelHamuiToolStripMenuItem_Click);
             // 
             // lucasSuletaToolStripMenuItem
             // 
             this.lucasSuletaToolStripMenuItem.Name = "lucasSuletaToolStripMenuItem";
             this.lucasSuletaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.lucasSuletaToolStripMenuItem.Text = "Lucas Suleta";
+            this.lucasSuletaToolStripMenuItem.Click += new System.EventHandler(this.lucasSuletaToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(45, 21);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -285,14 +282,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeRubrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeMovimientosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeReportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem integrantesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaProveedoresToolStripMenuItem;
@@ -307,6 +301,8 @@
         private System.Windows.Forms.ToolStripMenuItem movimientosDeProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emanuelHamuiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lucasSuletaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaModificarElimanarRubrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 

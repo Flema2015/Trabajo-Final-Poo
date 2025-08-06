@@ -188,6 +188,12 @@
     <EmbeddedResource Include="Gestión de Rubros\Formulario_alta_rubro.resx">
       <DependentUpon>Formulario_alta_rubro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Integrantes\Formulario_Emanuel.resx">
+      <DependentUpon>Formulario_Emanuel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integrantes\Formulario_Lucas.resx">
+      <DependentUpon>Formulario_Lucas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
