@@ -223,12 +223,14 @@
             this.productosConBajoStockToolStripMenuItem.Name = "productosConBajoStockToolStripMenuItem";
             this.productosConBajoStockToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.productosConBajoStockToolStripMenuItem.Text = "Productos con Bajo Stock";
+            this.productosConBajoStockToolStripMenuItem.Click += new System.EventHandler(this.productosConBajoStockToolStripMenuItem_Click);
             // 
             // movimientosDeProductoToolStripMenuItem
             // 
             this.movimientosDeProductoToolStripMenuItem.Name = "movimientosDeProductoToolStripMenuItem";
             this.movimientosDeProductoToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.movimientosDeProductoToolStripMenuItem.Text = "Movimientos de Producto";
+            this.movimientosDeProductoToolStripMenuItem.Click += new System.EventHandler(this.movimientosDeProductoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 

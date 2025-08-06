@@ -176,6 +176,9 @@
     <EmbeddedResource Include="Gestión de movimientos\Formulario_ingreso_stock.resx">
       <DependentUpon>Formulario_ingreso_stock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gestión de movimientos\Formulario_todos_los_movimientos.resx">
+      <DependentUpon>Formulario_todos_los_movimientos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gestión de Proveedores\Formulario_alta_proveedor.resx">
       <DependentUpon>Formulario_alta_proveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,8 +200,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\Formulario_historial_movimientos_producto.resx">
+      <DependentUpon>Formulario_historial_movimientos_producto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Formulario_movimientos_por_proveedor.resx">
       <DependentUpon>Formulario_movimientos_por_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Formulario_producto_bajo_stock.resx">
+      <DependentUpon>Formulario_producto_bajo_stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Formulario_stock_por_producto.resx">
       <DependentUpon>Formulario_stock_por_producto.cs</DependentUpon>

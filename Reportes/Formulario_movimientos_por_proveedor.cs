@@ -23,16 +23,30 @@ namespace Trabajo_Final_Poo.Reportes
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string proveedorSeleccionado = cmbProveedores.SelectedItem.ToString();
 
-            var movimientos = gestor_reportes.Listar_ingresos_por_proveedor(proveedorSeleccionado);
-
-            foreach (var item in movimientos)
+            if(cmbProveedores.SelectedIndex == -1)
             {
-                lstProductosPorProveedor.Items.Add(item);
+                MessageBox.Show("Selecciona un proveedor.");
+                return;
             }
 
-            //lstProductosPorProveedor.DataSource = movimientos;
+            var proveedorSeleccionado = ((Proveedor)cmbProveedores.SelectedItem).nombre;
+
+
+            try
+            {
+                var movimientos = gestor_reportes.Listar_ingresos_por_proveedor(proveedorSeleccionado);
+
+                lstProductosPorProveedor.Items.Clear(); // Limpiar la lista antes de agregar nuevos elementos
+                foreach (var movimiento in movimientos)
+                {
+                    lstProductosPorProveedor.Items.Add($"Producto: {movimiento.Producto}, Fecha: {movimiento.Fecha.ToShortDateString()}, Cantidad: {movimiento.Cantidad}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

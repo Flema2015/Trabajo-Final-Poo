@@ -58,13 +58,13 @@ namespace Trabajo_Final_Poo
                 form_modificar.Dock = DockStyle.Fill;
                 form_modificar.FormBorderStyle = FormBorderStyle.None;
                 form_modificar.Show();
-               
+
             }
         }
 
         private void altaProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             Form form_open = Application.OpenForms["Formulario_alta_producto"];
 
             foreach (Form child in this.MdiChildren)
@@ -164,7 +164,7 @@ namespace Trabajo_Final_Poo
                 form_gestion_rubros.Dock = DockStyle.Fill;
                 form_gestion_rubros.FormBorderStyle = FormBorderStyle.None;
                 form_gestion_rubros.Show();
-            }   
+            }
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -216,6 +216,36 @@ namespace Trabajo_Final_Poo
                 form_movimiento_proveedor.Dock = DockStyle.Fill;
                 form_movimiento_proveedor.FormBorderStyle = FormBorderStyle.None;
                 form_movimiento_proveedor.Show();
+            }
+        }
+
+        private void productosConBajoStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_producto_bajo_stock"];
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+            if (form_open == null)
+            {
+                Formulario_producto_bajo_stock form_bajo_stock = new Formulario_producto_bajo_stock();
+                form_bajo_stock.MdiParent = this;
+                form_bajo_stock.Dock = DockStyle.Fill;
+                form_bajo_stock.FormBorderStyle = FormBorderStyle.None;
+                form_bajo_stock.Show();
+            }
+        }
+
+        private void movimientosDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form_open = Application.OpenForms["Formulario_historial_movimientos_producto"];
+            foreach (Form child in this.MdiChildren)
+                child.Close();
+            if (form_open == null)
+            {
+                Formulario_historial_movimientos_producto form_historial= new Formulario_historial_movimientos_producto();
+                form_historial.MdiParent = this;
+                form_historial.Dock = DockStyle.Fill;
+                form_historial.FormBorderStyle = FormBorderStyle.None;
+                form_historial.Show();
             }
         }
     }

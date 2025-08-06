@@ -2,3 +2,4 @@
 fernet|fernandito cavenaghi|10000,00|15000,00|67|Alimentos|18/09/2025
 botella|botellita|8000,00|12000,00|41|Electrónica|12/09/2025
 hola|hola|1000,00|1500,00|1000|Electrónica|05/08/2025
+pepe|pedro sanchez|122,00|183,00|4|Electrónica|05/08/2025

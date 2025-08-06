@@ -95,33 +95,26 @@ namespace Trabajo_Final_Poo
             return resultado;
         }
 
-        public List<string> Listar_ingresos_por_proveedor(string nombre_proveedor)
+        public List<IngresoProductoDto> Listar_ingresos_por_proveedor(string nombre_proveedor)
         {
-            var movimientos = gestion_Movimientos.Obtener_movimientos();
+            // Validar que el proveedor exista
+            var proveedor = gestion_proveedores.Obtener_proveedor_por_nombre(nombre_proveedor);
+            if (proveedor == null)
+                throw new ArgumentException($"No se encontró un proveedor con nombre '{nombre_proveedor}'", nameof(nombre_proveedor));
 
-            var proveedores = movimientos
-                .Select(m => m.Proveedor)
-                .Distinct(StringComparer.OrdinalIgnoreCase)
+            // Obtener movimientos y filtrar por tipo "Ingreso" y proveedor
+            var movimientos = gestion_Movimientos.Obtener_movimientos()
+                .Where(m => m.Proveedor == nombre_proveedor && m.Stock > 0) // Filtrar ingresos
+                .Select(m => new IngresoProductoDto
+                {
+                    Producto = m.Producto,
+                    Fecha = m.Fecha,
+                    Cantidad = m.Stock,
+                    Proveedor = m.Proveedor
+                })
                 .ToList();
 
-            if(!proveedores.Contains(nombre_proveedor, StringComparer.OrdinalIgnoreCase))
-            {
-                MessageBox.Show($"No se encontró un proveedor con nombre '{nombre_proveedor}'", 
-                    "Error", 
-                    MessageBoxButtons.OK, 
-                    MessageBoxIcon.Error
-                    );
-                return new List<string>();
-            }
-
-            var ingresos = movimientos
-                .Where(m =>
-                string.Equals(m.Proveedor, nombre_proveedor, StringComparison.OrdinalIgnoreCase))
-                .ToList();
-
-            return ingresos
-                .Select(m => $"{m.Fecha.ToShortDateString()} - {m.Producto} - {m.Stock} unidades")
-                .ToList();
+            return movimientos;
         }
 
         public List<Stock_info_producto> Producto_con_bajo_stock()
@@ -149,26 +142,14 @@ namespace Trabajo_Final_Poo
 
             return resultado;
         }
-        //public List<string> Listar_ingresos_egresos_producto(string nombre_producto)
-        //{
-        //    1.Validar que exista el producto
+        public List<Movimiento> listar_movimientos_producto(string nombre_producto)
+        {
 
-        //    var producto = gestion_producto
-        //        .Obtener_producto_por_nombre(nombre_producto);
-        //    if (producto == null)
-        //        throw new ArgumentException(
-        //            $"No se encontró un proveedor con nombre '{nombre_producto}'",
-        //            nameof(nombre_producto));
-
-
-        //    2 filtrar movimientos de tipo ingreso y egreso para ese producto
-        //    var movimientos = gestion_Movimientos.Buscar(producto_nombre: nombre_producto);
-
-        //    3.Devolver una lista con el nombre del producto por cada ingreso y egreso
-
-        //    return movimientos
-        //        .Select(m => m.nombre_producto)
-        //        .ToList();
-        //}
+            var movimiento = gestion_Movimientos.Obtener_movimientos();
+           
+            return movimiento
+                .Where(m => m.Producto == nombre_producto)
+                .OrderBy(m => m.Fecha).ToList();
+        }
     }
 }
